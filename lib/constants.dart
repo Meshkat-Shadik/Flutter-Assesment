@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-const bgPrimaryColor = Color(0xffE5E5E5);
+const bgPrimaryColor = Color.fromARGB(255, 247, 242, 255);
 const bgWhite = Color(0xffffffff);
 const fabMinusColor = Color(0xffFFBFDD);
 const fabExpandedColor = Color(0xffFFCCE4);
 const greyColor = Color(0xff646464);
 const pinkColor = Color(0xffda2079);
 const badgeErrorColor = Color(0xffC62828);
+const badgeErrorShadeColor = Color(0xffffcccc);
+const minusFabButtonColor = Color(0xffFFBFDD);
 
 const floatingBtnGradient = LinearGradient(
-    colors: [
-      Color(0xff6210E1),
-      Color(0xff1400AE),
-    ],
-    begin: FractionalOffset(0.0, 0.0),
-    end: FractionalOffset(0.5, 0.0),
-    stops: [0.0, 1.0],
-    tileMode: TileMode.clamp);
+  colors: [
+    Color(0xff6210E1),
+    Color(0xff1400AE),
+  ],
+  begin: Alignment.topCenter,
+  end: Alignment.bottomCenter,
+  stops: [0.0, 1.0],
+  tileMode: TileMode.clamp,
+);
 
 //home text size
 const double hTitleFontSize = 14;
@@ -44,28 +48,46 @@ const hBadgeStyle = TextStyle(
   fontSize: hBadgeFontSize,
 );
 
-const hTitleStyle = TextStyle(
+final hTitleStyle = GoogleFonts.poppins(
   fontWeight: FontWeight.w500,
   fontSize: hTitleFontSize,
 );
 
-const hkroyPriceStyle = TextStyle(
+final hkroyPriceStyle = GoogleFonts.poppins(
   color: pinkColor,
   fontSize: hKroyPriceFontSize,
-  fontWeight: FontWeight.w700,
+  fontWeight: FontWeight.bold,
 );
 
-const hBikroyPriceStyle = TextStyle(
-  color: Color(0xff646464),
+final hKroyBikroyLavTextStyle = GoogleFonts.poppins(
+  color: greyColor,
+  fontSize: hKroyBikroyLavFontSize,
+  fontWeight: FontWeight.w400,
+);
+
+final hBikroyPriceStyle = GoogleFonts.poppins(
+  color: greyColor,
   fontSize: hBikroyPriceFontSize,
   fontWeight: FontWeight.w600,
 );
 
-const hKroyPreviousStyle = TextStyle(
+final hKroyPreviousStyle = GoogleFonts.poppins(
   color: pinkColor,
   fontSize: hKroyPreviousFontSize,
   fontWeight: FontWeight.w500,
   decoration: TextDecoration.lineThrough,
+);
+
+const bageErrorTextStyle = TextStyle(
+  color: badgeErrorColor,
+  fontSize: hBadgeFontSize,
+  fontWeight: FontWeight.w500,
+);
+
+const hQuantityTextStyle = TextStyle(
+  color: pinkColor,
+  fontSize: hFabQuantityFontSize,
+  fontWeight: FontWeight.w500,
 );
 
 //details screen text style
