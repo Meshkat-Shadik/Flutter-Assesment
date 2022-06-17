@@ -10,6 +10,9 @@ const pinkColor = Color(0xffda2079);
 const badgeErrorColor = Color(0xffC62828);
 const badgeErrorShadeColor = Color(0xffffcccc);
 const minusFabButtonColor = Color(0xffFFBFDD);
+const hintTextColor = Color(0xff989898);
+const String dashedLine =
+    '- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ';
 
 const floatingBtnGradient = LinearGradient(
   colors: [
@@ -37,10 +40,17 @@ const double dItemNameFontSize = 24;
 const double dItemSubTitleFontSize = 14;
 const double dKroyFontSize = 20;
 const double dPageTitleFontSize = 20;
-const double dBikroyLavFontSize = 14;
+const double dBikroyLavFontSize = 16;
 const double dBistaritoTitleFontSize = 20;
 const double dEtiKinunFontSize = 16;
 const double dBistaritoDescFontSize = 16;
+
+//common text styles
+const cHintTextStyle = TextStyle(
+  color: hintTextColor,
+  fontSize: 12,
+  fontWeight: FontWeight.w500,
+);
 
 //home text styles
 const hBadgeStyle = TextStyle(
@@ -94,17 +104,48 @@ const hQuantityTextStyle = TextStyle(
 const detailsProductTitle = TextStyle(
   color: Color(0xff19181B),
   fontSize: 24,
-  fontWeight: FontWeight.w600,
+  fontWeight: FontWeight.bold,
 );
 
 const detailsTitle = TextStyle(
   color: Color(0xff323232),
   fontSize: 20,
-  fontWeight: FontWeight.w600,
+  fontWeight: FontWeight.bold,
 );
 
 const detailsText = TextStyle(
   color: greyColor,
   fontWeight: FontWeight.w400,
   fontSize: 16,
+);
+
+const dBrandDistributorNameStyle = TextStyle(
+  fontSize: 14,
+  color: greyColor,
+);
+
+const dBrandDistributorValueStyle = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.bold,
+  color: Color(0xff19181b),
+);
+
+final dkroyPriceStyle = GoogleFonts.poppins(
+  color: pinkColor,
+  fontSize: dKroyFontSize,
+  fontWeight: FontWeight.bold,
+);
+
+final dBikroyLavPriceStyle = GoogleFonts.poppins(
+  color: const Color(0xff19181b),
+  fontSize: dBikroyLavFontSize,
+  fontWeight: FontWeight.bold,
+);
+
+final dashedLineStyle = TextStyle(
+  color: Colors.grey.shade400,
+);
+const etiKinunStyle = TextStyle(
+  color: Colors.white,
+  fontWeight: FontWeight.w400,
 );

@@ -1,4 +1,5 @@
 import 'package:ecommerce_demo/constants.dart';
+import 'package:ecommerce_demo/presentation/widgets/custom_search_field.dart';
 import 'package:ecommerce_demo/presentation/widgets/row_widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -17,19 +18,7 @@ class MyHomePage extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(height: 24),
-              Container(
-                height: 48,
-                decoration: BoxDecoration(
-                  color: bgWhite,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: TextFormField(
-                  decoration: const InputDecoration(
-                    border: InputBorder.none,
-                  ),
-                ),
-              ),
+              const CustomSearchField(),
               Expanded(
                 child: ListView.builder(
                   physics: const BouncingScrollPhysics(),
