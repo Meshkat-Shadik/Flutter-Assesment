@@ -1,7 +1,10 @@
 import 'package:ecommerce_demo/constants.dart';
+import 'package:ecommerce_demo/infrastructure/model/api_data_model.dart';
 import 'package:ecommerce_demo/presentation/widgets/custom_search_field.dart';
 import 'package:ecommerce_demo/presentation/widgets/row_widgets.dart';
 import 'package:flutter/material.dart';
+
+import 'package:http/http.dart' as http;
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -19,6 +22,20 @@ class MyHomePage extends StatelessWidget {
             children: [
               const SizedBox(height: 24),
               const CustomSearchField(),
+              // ElevatedButton(
+              //   onPressed: () async {
+              //     const String baseUrl =
+              //         'https://panel.supplyline.network/api/product/search-suggestions/?format=json&limit=10&offset=10';
+
+              //     final res = await http.get(Uri.parse(baseUrl));
+
+              //     final x = apiDataFromJson(res.body);
+              //     print(
+              //       x.data?.products?.results?.length.toString(),
+              //     );
+              //   },
+              //   child: Text('get data'),
+              // ),
               Expanded(
                 child: ListView.builder(
                   physics: const BouncingScrollPhysics(),
