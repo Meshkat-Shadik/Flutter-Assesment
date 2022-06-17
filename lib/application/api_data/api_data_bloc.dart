@@ -16,10 +16,10 @@ class ApiDataBloc extends Bloc<ApiDataEvent, ApiDataState> {
     on<_WatchAllStarted>((event, emit) async {
       emit(const ApiDataState.loadInProgress());
       var products = await _iApiRepository.getAllProducts();
-      products.fold(
-        (l) => emit(ApiDataState.loadFailure(l)),
-        (prod) => emit(ApiDataState.loadSucess(prod)),
-      );
+      emit(products.fold(
+        (l) => ApiDataState.loadFailure(l),
+        (prod) => ApiDataState.loadSucess(prod),
+      ));
     });
   }
 }

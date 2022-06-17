@@ -27,7 +27,7 @@ const floatingBtnGradient = LinearGradient(
 
 //home text size
 const double hTitleFontSize = 14;
-const double hKroyBikroyLavFontSize = 8;
+const double hKroyBikroyLavFontSize = 10;
 const double hKroyPriceFontSize = 16;
 const double hBikroyPriceFontSize = 12;
 const double hKroyPreviousFontSize = 12;
@@ -59,7 +59,7 @@ const hBadgeStyle = TextStyle(
 );
 
 final hTitleStyle = GoogleFonts.poppins(
-  fontWeight: FontWeight.w500,
+  fontWeight: FontWeight.bold,
   fontSize: hTitleFontSize,
 );
 
@@ -72,7 +72,7 @@ final hkroyPriceStyle = GoogleFonts.poppins(
 final hKroyBikroyLavTextStyle = GoogleFonts.poppins(
   color: greyColor,
   fontSize: hKroyBikroyLavFontSize,
-  fontWeight: FontWeight.w400,
+  fontWeight: FontWeight.bold,
 );
 
 final hBikroyPriceStyle = GoogleFonts.poppins(

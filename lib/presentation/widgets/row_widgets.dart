@@ -1,4 +1,5 @@
 import 'package:ecommerce_demo/constants.dart';
+import 'package:ecommerce_demo/infrastructure/model/home_page_item_model/home_page_item_model.dart';
 import 'package:ecommerce_demo/presentation/screens/details_page.dart';
 import 'package:ecommerce_demo/presentation/widgets/custom_circle_button.dart';
 import 'package:ecommerce_demo/presentation/widgets/expanded_fab_button.dart';
@@ -9,18 +10,10 @@ class RowItem extends HookWidget {
   const RowItem({
     Key? key,
     required this.width,
-    required this.kroyTaka,
-    required this.bikroyTaka,
-    required this.kroyPreviousTaka,
-    required this.lavTaka,
-    required this.isStockAvail,
+    required this.homeItemModel,
   }) : super(key: key);
   final double width;
-  final double kroyTaka;
-  final double bikroyTaka;
-  final double kroyPreviousTaka;
-  final double lavTaka;
-  final bool isStockAvail;
+  final HomeItemModel homeItemModel;
 
   @override
   Widget build(BuildContext context) {
@@ -48,8 +41,8 @@ class RowItem extends HookWidget {
                     height: 148,
                     width: width,
                     color: bgWhite,
-                    child: Image.asset(
-                      'assets/potato_chips.png',
+                    child: Image.network(
+                      homeItemModel.image!,
                       height: 117,
                       width: 87,
                       fit: BoxFit.contain,
@@ -65,29 +58,29 @@ class RowItem extends HookWidget {
                           ));
                     },
                     child: Text(
-                      'Lays Classic Family Chips Chips',
+                      homeItemModel.title!,
                       style: hTitleStyle,
                       maxLines: 2,
                     ),
                   ),
                   const SizedBox(height: 8),
                   RowPrice(
-                    kroyTaka: kroyTaka,
-                    kroyPreviousTaka: kroyPreviousTaka,
-                    bikroyTaka: bikroyTaka,
-                    lavTaka: lavTaka,
+                    kroyTaka: homeItemModel.kroy!,
+                    kroyPreviousTaka: homeItemModel.discount!,
+                    bikroyTaka: homeItemModel.bikroy!,
+                    lavTaka: homeItemModel.lav!,
                     isTopRow: true,
                   ),
                   RowPrice(
-                    kroyTaka: kroyTaka,
-                    kroyPreviousTaka: kroyPreviousTaka,
-                    bikroyTaka: bikroyTaka,
-                    lavTaka: lavTaka,
+                    kroyTaka: homeItemModel.kroy!,
+                    kroyPreviousTaka: homeItemModel.discount!,
+                    bikroyTaka: homeItemModel.bikroy!,
+                    lavTaka: homeItemModel.lav!,
                     isTopRow: false,
                   ),
                 ],
               ),
-              !isStockAvail
+              !homeItemModel.stock!
                   ? Positioned(
                       right: 0,
                       child: Container(
@@ -119,7 +112,7 @@ class RowItem extends HookWidget {
                   toggleButton: toggleButton,
                 ),
               )
-            : isStockAvail
+            : homeItemModel.stock!
                 ? Positioned(
                     bottom: -18,
                     left: width / 2.4,

@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:dartz/dartz.dart';
 import 'package:ecommerce_demo/domain/failures.dart';
 import 'package:ecommerce_demo/domain/i_api_repository.dart';
@@ -14,9 +12,9 @@ class ApiModelRepository implements IApiRepository {
   Future<Either<ApiDataFailure, Products>> getAllProducts() async {
     try {
       final response = await http.get(Uri.parse(ApiPath.allData));
-      final bodyData = apiDataFromJson(response.body);
+      final bodyData = apiDataFromJson(response.bodyBytes);
       final products = bodyData.data?.products;
-      print(products.toString());
+      // print(products!.results!.first.productName);
       if (products != null) {
         return right(products);
       } else {

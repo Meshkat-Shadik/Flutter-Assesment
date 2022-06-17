@@ -2,13 +2,16 @@
 //
 //     final apiData = apiDataFromJson(jsonString);
 
+import 'dart:typed_data';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'dart:convert';
 
 part 'api_data_model.freezed.dart';
 part 'api_data_model.g.dart';
 
-ApiData apiDataFromJson(String str) => ApiData.fromJson(json.decode(str));
+ApiData apiDataFromJson(Uint8List str) =>
+    ApiData.fromJson(json.decode(utf8.decode(str)));
 
 Result resultDataFromJson(String str) => Result.fromJson(json.decode(str));
 
@@ -77,15 +80,15 @@ abstract class Result with _$Result {
     bool? isSeller,
     bool? isPhone,
     bool? willShowEmi,
-    dynamic? badge,
+    dynamic badge,
     bool? isActive,
     DateTime? createdAt,
     DateTime? updatedAt,
-    dynamic? language,
+    dynamic language,
     String? seller,
-    dynamic? combo,
+    dynamic combo,
     String? createdBy,
-    dynamic? updatedBy,
+    dynamic updatedBy,
     List<int>? category,
     List<dynamic>? relatedProduct,
     List<dynamic>? filterValue,
@@ -111,18 +114,18 @@ abstract class Charge with _$Charge {
   const factory Charge({
     double? bookingPrice,
     double? currentCharge,
-    dynamic? discountCharge,
+    dynamic discountCharge,
     double? sellingPrice,
     double? profit,
     bool? isEvent,
-    dynamic? eventId,
+    dynamic eventId,
     bool? highlight,
-    dynamic? highlightId,
+    dynamic highlightId,
     bool? groupping,
-    dynamic? grouppingId,
-    dynamic? campaignSectionId,
+    dynamic grouppingId,
+    dynamic campaignSectionId,
     bool? campaignSection,
-    dynamic? message,
+    dynamic message,
   }) = _Charge;
 
   factory Charge.fromJson(Map<String, dynamic> json) => _$ChargeFromJson(json);
