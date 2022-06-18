@@ -562,15 +562,15 @@ mixin _$Result {
   bool? get isSeller => throw _privateConstructorUsedError;
   bool? get isPhone => throw _privateConstructorUsedError;
   bool? get willShowEmi => throw _privateConstructorUsedError;
-  dynamic? get badge => throw _privateConstructorUsedError;
+  dynamic get badge => throw _privateConstructorUsedError;
   bool? get isActive => throw _privateConstructorUsedError;
   DateTime? get createdAt => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
-  dynamic? get language => throw _privateConstructorUsedError;
+  dynamic get language => throw _privateConstructorUsedError;
   String? get seller => throw _privateConstructorUsedError;
-  dynamic? get combo => throw _privateConstructorUsedError;
+  dynamic get combo => throw _privateConstructorUsedError;
   String? get createdBy => throw _privateConstructorUsedError;
-  dynamic? get updatedBy => throw _privateConstructorUsedError;
+  dynamic get updatedBy => throw _privateConstructorUsedError;
   List<int>? get category => throw _privateConstructorUsedError;
   List<dynamic>? get relatedProduct => throw _privateConstructorUsedError;
   List<dynamic>? get filterValue => throw _privateConstructorUsedError;
@@ -609,15 +609,15 @@ abstract class $ResultCopyWith<$Res> {
       bool? isSeller,
       bool? isPhone,
       bool? willShowEmi,
-      dynamic? badge,
+      dynamic badge,
       bool? isActive,
       DateTime? createdAt,
       DateTime? updatedAt,
-      dynamic? language,
+      dynamic language,
       String? seller,
-      dynamic? combo,
+      dynamic combo,
       String? createdBy,
-      dynamic? updatedBy,
+      dynamic updatedBy,
       List<int>? category,
       List<dynamic>? relatedProduct,
       List<dynamic>? filterValue});
@@ -773,7 +773,7 @@ class _$ResultCopyWithImpl<$Res> implements $ResultCopyWith<$Res> {
       badge: badge == freezed
           ? _value.badge
           : badge // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       isActive: isActive == freezed
           ? _value.isActive
           : isActive // ignore: cast_nullable_to_non_nullable
@@ -789,7 +789,7 @@ class _$ResultCopyWithImpl<$Res> implements $ResultCopyWith<$Res> {
       language: language == freezed
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       seller: seller == freezed
           ? _value.seller
           : seller // ignore: cast_nullable_to_non_nullable
@@ -797,7 +797,7 @@ class _$ResultCopyWithImpl<$Res> implements $ResultCopyWith<$Res> {
       combo: combo == freezed
           ? _value.combo
           : combo // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       createdBy: createdBy == freezed
           ? _value.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
@@ -805,7 +805,7 @@ class _$ResultCopyWithImpl<$Res> implements $ResultCopyWith<$Res> {
       updatedBy: updatedBy == freezed
           ? _value.updatedBy
           : updatedBy // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       category: category == freezed
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -874,15 +874,15 @@ abstract class _$$_ResultCopyWith<$Res> implements $ResultCopyWith<$Res> {
       bool? isSeller,
       bool? isPhone,
       bool? willShowEmi,
-      dynamic? badge,
+      dynamic badge,
       bool? isActive,
       DateTime? createdAt,
       DateTime? updatedAt,
-      dynamic? language,
+      dynamic language,
       String? seller,
-      dynamic? combo,
+      dynamic combo,
       String? createdBy,
-      dynamic? updatedBy,
+      dynamic updatedBy,
       List<int>? category,
       List<dynamic>? relatedProduct,
       List<dynamic>? filterValue});
@@ -1041,7 +1041,7 @@ class __$$_ResultCopyWithImpl<$Res> extends _$ResultCopyWithImpl<$Res>
       badge: badge == freezed
           ? _value.badge
           : badge // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       isActive: isActive == freezed
           ? _value.isActive
           : isActive // ignore: cast_nullable_to_non_nullable
@@ -1057,7 +1057,7 @@ class __$$_ResultCopyWithImpl<$Res> extends _$ResultCopyWithImpl<$Res>
       language: language == freezed
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       seller: seller == freezed
           ? _value.seller
           : seller // ignore: cast_nullable_to_non_nullable
@@ -1065,7 +1065,7 @@ class __$$_ResultCopyWithImpl<$Res> extends _$ResultCopyWithImpl<$Res>
       combo: combo == freezed
           ? _value.combo
           : combo // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       createdBy: createdBy == freezed
           ? _value.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
@@ -1073,7 +1073,7 @@ class __$$_ResultCopyWithImpl<$Res> extends _$ResultCopyWithImpl<$Res>
       updatedBy: updatedBy == freezed
           ? _value.updatedBy
           : updatedBy // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       category: category == freezed
           ? _value._category
           : category // ignore: cast_nullable_to_non_nullable
@@ -1194,7 +1194,7 @@ class _$_Result implements _Result {
   @override
   final bool? willShowEmi;
   @override
-  final dynamic? badge;
+  final dynamic badge;
   @override
   final bool? isActive;
   @override
@@ -1202,15 +1202,15 @@ class _$_Result implements _Result {
   @override
   final DateTime? updatedAt;
   @override
-  final dynamic? language;
+  final dynamic language;
   @override
   final String? seller;
   @override
-  final dynamic? combo;
+  final dynamic combo;
   @override
   final String? createdBy;
   @override
-  final dynamic? updatedBy;
+  final dynamic updatedBy;
   final List<int>? _category;
   @override
   List<int>? get category {
@@ -1376,15 +1376,15 @@ abstract class _Result implements Result {
       final bool? isSeller,
       final bool? isPhone,
       final bool? willShowEmi,
-      final dynamic? badge,
+      final dynamic badge,
       final bool? isActive,
       final DateTime? createdAt,
       final DateTime? updatedAt,
-      final dynamic? language,
+      final dynamic language,
       final String? seller,
-      final dynamic? combo,
+      final dynamic combo,
       final String? createdBy,
-      final dynamic? updatedBy,
+      final dynamic updatedBy,
       final List<int>? category,
       final List<dynamic>? relatedProduct,
       final List<dynamic>? filterValue}) = _$_Result;
@@ -1440,7 +1440,7 @@ abstract class _Result implements Result {
   @override
   bool? get willShowEmi => throw _privateConstructorUsedError;
   @override
-  dynamic? get badge => throw _privateConstructorUsedError;
+  dynamic get badge => throw _privateConstructorUsedError;
   @override
   bool? get isActive => throw _privateConstructorUsedError;
   @override
@@ -1448,15 +1448,15 @@ abstract class _Result implements Result {
   @override
   DateTime? get updatedAt => throw _privateConstructorUsedError;
   @override
-  dynamic? get language => throw _privateConstructorUsedError;
+  dynamic get language => throw _privateConstructorUsedError;
   @override
   String? get seller => throw _privateConstructorUsedError;
   @override
-  dynamic? get combo => throw _privateConstructorUsedError;
+  dynamic get combo => throw _privateConstructorUsedError;
   @override
   String? get createdBy => throw _privateConstructorUsedError;
   @override
-  dynamic? get updatedBy => throw _privateConstructorUsedError;
+  dynamic get updatedBy => throw _privateConstructorUsedError;
   @override
   List<int>? get category => throw _privateConstructorUsedError;
   @override
@@ -1658,18 +1658,18 @@ Charge _$ChargeFromJson(Map<String, dynamic> json) {
 mixin _$Charge {
   double? get bookingPrice => throw _privateConstructorUsedError;
   double? get currentCharge => throw _privateConstructorUsedError;
-  dynamic? get discountCharge => throw _privateConstructorUsedError;
+  dynamic get discountCharge => throw _privateConstructorUsedError;
   double? get sellingPrice => throw _privateConstructorUsedError;
   double? get profit => throw _privateConstructorUsedError;
   bool? get isEvent => throw _privateConstructorUsedError;
-  dynamic? get eventId => throw _privateConstructorUsedError;
+  dynamic get eventId => throw _privateConstructorUsedError;
   bool? get highlight => throw _privateConstructorUsedError;
-  dynamic? get highlightId => throw _privateConstructorUsedError;
+  dynamic get highlightId => throw _privateConstructorUsedError;
   bool? get groupping => throw _privateConstructorUsedError;
-  dynamic? get grouppingId => throw _privateConstructorUsedError;
-  dynamic? get campaignSectionId => throw _privateConstructorUsedError;
+  dynamic get grouppingId => throw _privateConstructorUsedError;
+  dynamic get campaignSectionId => throw _privateConstructorUsedError;
   bool? get campaignSection => throw _privateConstructorUsedError;
-  dynamic? get message => throw _privateConstructorUsedError;
+  dynamic get message => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1683,18 +1683,18 @@ abstract class $ChargeCopyWith<$Res> {
   $Res call(
       {double? bookingPrice,
       double? currentCharge,
-      dynamic? discountCharge,
+      dynamic discountCharge,
       double? sellingPrice,
       double? profit,
       bool? isEvent,
-      dynamic? eventId,
+      dynamic eventId,
       bool? highlight,
-      dynamic? highlightId,
+      dynamic highlightId,
       bool? groupping,
-      dynamic? grouppingId,
-      dynamic? campaignSectionId,
+      dynamic grouppingId,
+      dynamic campaignSectionId,
       bool? campaignSection,
-      dynamic? message});
+      dynamic message});
 }
 
 /// @nodoc
@@ -1734,7 +1734,7 @@ class _$ChargeCopyWithImpl<$Res> implements $ChargeCopyWith<$Res> {
       discountCharge: discountCharge == freezed
           ? _value.discountCharge
           : discountCharge // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       sellingPrice: sellingPrice == freezed
           ? _value.sellingPrice
           : sellingPrice // ignore: cast_nullable_to_non_nullable
@@ -1750,7 +1750,7 @@ class _$ChargeCopyWithImpl<$Res> implements $ChargeCopyWith<$Res> {
       eventId: eventId == freezed
           ? _value.eventId
           : eventId // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       highlight: highlight == freezed
           ? _value.highlight
           : highlight // ignore: cast_nullable_to_non_nullable
@@ -1758,7 +1758,7 @@ class _$ChargeCopyWithImpl<$Res> implements $ChargeCopyWith<$Res> {
       highlightId: highlightId == freezed
           ? _value.highlightId
           : highlightId // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       groupping: groupping == freezed
           ? _value.groupping
           : groupping // ignore: cast_nullable_to_non_nullable
@@ -1766,11 +1766,11 @@ class _$ChargeCopyWithImpl<$Res> implements $ChargeCopyWith<$Res> {
       grouppingId: grouppingId == freezed
           ? _value.grouppingId
           : grouppingId // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       campaignSectionId: campaignSectionId == freezed
           ? _value.campaignSectionId
           : campaignSectionId // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       campaignSection: campaignSection == freezed
           ? _value.campaignSection
           : campaignSection // ignore: cast_nullable_to_non_nullable
@@ -1778,7 +1778,7 @@ class _$ChargeCopyWithImpl<$Res> implements $ChargeCopyWith<$Res> {
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
     ));
   }
 }
@@ -1791,18 +1791,18 @@ abstract class _$$_ChargeCopyWith<$Res> implements $ChargeCopyWith<$Res> {
   $Res call(
       {double? bookingPrice,
       double? currentCharge,
-      dynamic? discountCharge,
+      dynamic discountCharge,
       double? sellingPrice,
       double? profit,
       bool? isEvent,
-      dynamic? eventId,
+      dynamic eventId,
       bool? highlight,
-      dynamic? highlightId,
+      dynamic highlightId,
       bool? groupping,
-      dynamic? grouppingId,
-      dynamic? campaignSectionId,
+      dynamic grouppingId,
+      dynamic campaignSectionId,
       bool? campaignSection,
-      dynamic? message});
+      dynamic message});
 }
 
 /// @nodoc
@@ -1843,7 +1843,7 @@ class __$$_ChargeCopyWithImpl<$Res> extends _$ChargeCopyWithImpl<$Res>
       discountCharge: discountCharge == freezed
           ? _value.discountCharge
           : discountCharge // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       sellingPrice: sellingPrice == freezed
           ? _value.sellingPrice
           : sellingPrice // ignore: cast_nullable_to_non_nullable
@@ -1859,7 +1859,7 @@ class __$$_ChargeCopyWithImpl<$Res> extends _$ChargeCopyWithImpl<$Res>
       eventId: eventId == freezed
           ? _value.eventId
           : eventId // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       highlight: highlight == freezed
           ? _value.highlight
           : highlight // ignore: cast_nullable_to_non_nullable
@@ -1867,7 +1867,7 @@ class __$$_ChargeCopyWithImpl<$Res> extends _$ChargeCopyWithImpl<$Res>
       highlightId: highlightId == freezed
           ? _value.highlightId
           : highlightId // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       groupping: groupping == freezed
           ? _value.groupping
           : groupping // ignore: cast_nullable_to_non_nullable
@@ -1875,11 +1875,11 @@ class __$$_ChargeCopyWithImpl<$Res> extends _$ChargeCopyWithImpl<$Res>
       grouppingId: grouppingId == freezed
           ? _value.grouppingId
           : grouppingId // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       campaignSectionId: campaignSectionId == freezed
           ? _value.campaignSectionId
           : campaignSectionId // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       campaignSection: campaignSection == freezed
           ? _value.campaignSection
           : campaignSection // ignore: cast_nullable_to_non_nullable
@@ -1887,7 +1887,7 @@ class __$$_ChargeCopyWithImpl<$Res> extends _$ChargeCopyWithImpl<$Res>
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
     ));
   }
 }
@@ -1919,7 +1919,7 @@ class _$_Charge implements _Charge {
   @override
   final double? currentCharge;
   @override
-  final dynamic? discountCharge;
+  final dynamic discountCharge;
   @override
   final double? sellingPrice;
   @override
@@ -1927,21 +1927,21 @@ class _$_Charge implements _Charge {
   @override
   final bool? isEvent;
   @override
-  final dynamic? eventId;
+  final dynamic eventId;
   @override
   final bool? highlight;
   @override
-  final dynamic? highlightId;
+  final dynamic highlightId;
   @override
   final bool? groupping;
   @override
-  final dynamic? grouppingId;
+  final dynamic grouppingId;
   @override
-  final dynamic? campaignSectionId;
+  final dynamic campaignSectionId;
   @override
   final bool? campaignSection;
   @override
-  final dynamic? message;
+  final dynamic message;
 
   @override
   String toString() {
@@ -2011,18 +2011,18 @@ abstract class _Charge implements Charge {
   const factory _Charge(
       {final double? bookingPrice,
       final double? currentCharge,
-      final dynamic? discountCharge,
+      final dynamic discountCharge,
       final double? sellingPrice,
       final double? profit,
       final bool? isEvent,
-      final dynamic? eventId,
+      final dynamic eventId,
       final bool? highlight,
-      final dynamic? highlightId,
+      final dynamic highlightId,
       final bool? groupping,
-      final dynamic? grouppingId,
-      final dynamic? campaignSectionId,
+      final dynamic grouppingId,
+      final dynamic campaignSectionId,
       final bool? campaignSection,
-      final dynamic? message}) = _$_Charge;
+      final dynamic message}) = _$_Charge;
 
   factory _Charge.fromJson(Map<String, dynamic> json) = _$_Charge.fromJson;
 
@@ -2031,7 +2031,7 @@ abstract class _Charge implements Charge {
   @override
   double? get currentCharge => throw _privateConstructorUsedError;
   @override
-  dynamic? get discountCharge => throw _privateConstructorUsedError;
+  dynamic get discountCharge => throw _privateConstructorUsedError;
   @override
   double? get sellingPrice => throw _privateConstructorUsedError;
   @override
@@ -2039,21 +2039,21 @@ abstract class _Charge implements Charge {
   @override
   bool? get isEvent => throw _privateConstructorUsedError;
   @override
-  dynamic? get eventId => throw _privateConstructorUsedError;
+  dynamic get eventId => throw _privateConstructorUsedError;
   @override
   bool? get highlight => throw _privateConstructorUsedError;
   @override
-  dynamic? get highlightId => throw _privateConstructorUsedError;
+  dynamic get highlightId => throw _privateConstructorUsedError;
   @override
   bool? get groupping => throw _privateConstructorUsedError;
   @override
-  dynamic? get grouppingId => throw _privateConstructorUsedError;
+  dynamic get grouppingId => throw _privateConstructorUsedError;
   @override
-  dynamic? get campaignSectionId => throw _privateConstructorUsedError;
+  dynamic get campaignSectionId => throw _privateConstructorUsedError;
   @override
   bool? get campaignSection => throw _privateConstructorUsedError;
   @override
-  dynamic? get message => throw _privateConstructorUsedError;
+  dynamic get message => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_ChargeCopyWith<_$_Charge> get copyWith =>

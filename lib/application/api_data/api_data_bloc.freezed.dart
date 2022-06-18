@@ -167,55 +167,13 @@ abstract class _WatchAllStarted implements ApiDataEvent {
 
 /// @nodoc
 mixin _$ApiDataState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(Products products) loadSucess,
-    required TResult Function(ApiDataFailure noteFailure) loadFailure,
-  }) =>
+  bool get hasReachedMax => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
+  Option<Either<ApiDataFailure, Products>> get failureOrSuccessOption =>
       throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(Products products)? loadSucess,
-    TResult Function(ApiDataFailure noteFailure)? loadFailure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(Products products)? loadSucess,
-    TResult Function(ApiDataFailure noteFailure)? loadFailure,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_LoadSucess value) loadSucess,
-    required TResult Function(_LoadFailure value) loadFailure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSucess value)? loadSucess,
-    TResult Function(_LoadFailure value)? loadFailure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSucess value)? loadSucess,
-    TResult Function(_LoadFailure value)? loadFailure,
-    required TResult orElse(),
-  }) =>
+
+  @JsonKey(ignore: true)
+  $ApiDataStateCopyWith<ApiDataState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -224,6 +182,10 @@ abstract class $ApiDataStateCopyWith<$Res> {
   factory $ApiDataStateCopyWith(
           ApiDataState value, $Res Function(ApiDataState) then) =
       _$ApiDataStateCopyWithImpl<$Res>;
+  $Res call(
+      {bool hasReachedMax,
+      bool isLoading,
+      Option<Either<ApiDataFailure, Products>> failureOrSuccessOption});
 }
 
 /// @nodoc
@@ -233,546 +195,138 @@ class _$ApiDataStateCopyWithImpl<$Res> implements $ApiDataStateCopyWith<$Res> {
   final ApiDataState _value;
   // ignore: unused_field
   final $Res Function(ApiDataState) _then;
-}
-
-/// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_InitialCopyWithImpl<$Res> extends _$ApiDataStateCopyWithImpl<$Res>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
-
-  @override
-  _$_Initial get _value => super._value as _$_Initial;
-}
-
-/// @nodoc
-
-class _$_Initial implements _Initial {
-  const _$_Initial();
-
-  @override
-  String toString() {
-    return 'ApiDataState.initial()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(Products products) loadSucess,
-    required TResult Function(ApiDataFailure noteFailure) loadFailure,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(Products products)? loadSucess,
-    TResult Function(ApiDataFailure noteFailure)? loadFailure,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(Products products)? loadSucess,
-    TResult Function(ApiDataFailure noteFailure)? loadFailure,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_LoadSucess value) loadSucess,
-    required TResult Function(_LoadFailure value) loadFailure,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSucess value)? loadSucess,
-    TResult Function(_LoadFailure value)? loadFailure,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSucess value)? loadSucess,
-    TResult Function(_LoadFailure value)? loadFailure,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements ApiDataState {
-  const factory _Initial() = _$_Initial;
-}
-
-/// @nodoc
-abstract class _$$_LoadInProgressCopyWith<$Res> {
-  factory _$$_LoadInProgressCopyWith(
-          _$_LoadInProgress value, $Res Function(_$_LoadInProgress) then) =
-      __$$_LoadInProgressCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_LoadInProgressCopyWithImpl<$Res>
-    extends _$ApiDataStateCopyWithImpl<$Res>
-    implements _$$_LoadInProgressCopyWith<$Res> {
-  __$$_LoadInProgressCopyWithImpl(
-      _$_LoadInProgress _value, $Res Function(_$_LoadInProgress) _then)
-      : super(_value, (v) => _then(v as _$_LoadInProgress));
-
-  @override
-  _$_LoadInProgress get _value => super._value as _$_LoadInProgress;
-}
-
-/// @nodoc
-
-class _$_LoadInProgress implements _LoadInProgress {
-  const _$_LoadInProgress();
-
-  @override
-  String toString() {
-    return 'ApiDataState.loadInProgress()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_LoadInProgress);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(Products products) loadSucess,
-    required TResult Function(ApiDataFailure noteFailure) loadFailure,
-  }) {
-    return loadInProgress();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(Products products)? loadSucess,
-    TResult Function(ApiDataFailure noteFailure)? loadFailure,
-  }) {
-    return loadInProgress?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(Products products)? loadSucess,
-    TResult Function(ApiDataFailure noteFailure)? loadFailure,
-    required TResult orElse(),
-  }) {
-    if (loadInProgress != null) {
-      return loadInProgress();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_LoadSucess value) loadSucess,
-    required TResult Function(_LoadFailure value) loadFailure,
-  }) {
-    return loadInProgress(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSucess value)? loadSucess,
-    TResult Function(_LoadFailure value)? loadFailure,
-  }) {
-    return loadInProgress?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSucess value)? loadSucess,
-    TResult Function(_LoadFailure value)? loadFailure,
-    required TResult orElse(),
-  }) {
-    if (loadInProgress != null) {
-      return loadInProgress(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _LoadInProgress implements ApiDataState {
-  const factory _LoadInProgress() = _$_LoadInProgress;
-}
-
-/// @nodoc
-abstract class _$$_LoadSucessCopyWith<$Res> {
-  factory _$$_LoadSucessCopyWith(
-          _$_LoadSucess value, $Res Function(_$_LoadSucess) then) =
-      __$$_LoadSucessCopyWithImpl<$Res>;
-  $Res call({Products products});
-
-  $ProductsCopyWith<$Res> get products;
-}
-
-/// @nodoc
-class __$$_LoadSucessCopyWithImpl<$Res> extends _$ApiDataStateCopyWithImpl<$Res>
-    implements _$$_LoadSucessCopyWith<$Res> {
-  __$$_LoadSucessCopyWithImpl(
-      _$_LoadSucess _value, $Res Function(_$_LoadSucess) _then)
-      : super(_value, (v) => _then(v as _$_LoadSucess));
-
-  @override
-  _$_LoadSucess get _value => super._value as _$_LoadSucess;
 
   @override
   $Res call({
-    Object? products = freezed,
+    Object? hasReachedMax = freezed,
+    Object? isLoading = freezed,
+    Object? failureOrSuccessOption = freezed,
   }) {
-    return _then(_$_LoadSucess(
-      products == freezed
-          ? _value.products
-          : products // ignore: cast_nullable_to_non_nullable
-              as Products,
+    return _then(_value.copyWith(
+      hasReachedMax: hasReachedMax == freezed
+          ? _value.hasReachedMax
+          : hasReachedMax // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      failureOrSuccessOption: failureOrSuccessOption == freezed
+          ? _value.failureOrSuccessOption
+          : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<ApiDataFailure, Products>>,
     ));
   }
+}
+
+/// @nodoc
+abstract class _$$_ApiDataStateCopyWith<$Res>
+    implements $ApiDataStateCopyWith<$Res> {
+  factory _$$_ApiDataStateCopyWith(
+          _$_ApiDataState value, $Res Function(_$_ApiDataState) then) =
+      __$$_ApiDataStateCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {bool hasReachedMax,
+      bool isLoading,
+      Option<Either<ApiDataFailure, Products>> failureOrSuccessOption});
+}
+
+/// @nodoc
+class __$$_ApiDataStateCopyWithImpl<$Res>
+    extends _$ApiDataStateCopyWithImpl<$Res>
+    implements _$$_ApiDataStateCopyWith<$Res> {
+  __$$_ApiDataStateCopyWithImpl(
+      _$_ApiDataState _value, $Res Function(_$_ApiDataState) _then)
+      : super(_value, (v) => _then(v as _$_ApiDataState));
 
   @override
-  $ProductsCopyWith<$Res> get products {
-    return $ProductsCopyWith<$Res>(_value.products, (value) {
-      return _then(_value.copyWith(products: value));
-    });
+  _$_ApiDataState get _value => super._value as _$_ApiDataState;
+
+  @override
+  $Res call({
+    Object? hasReachedMax = freezed,
+    Object? isLoading = freezed,
+    Object? failureOrSuccessOption = freezed,
+  }) {
+    return _then(_$_ApiDataState(
+      hasReachedMax: hasReachedMax == freezed
+          ? _value.hasReachedMax
+          : hasReachedMax // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      failureOrSuccessOption: failureOrSuccessOption == freezed
+          ? _value.failureOrSuccessOption
+          : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<ApiDataFailure, Products>>,
+    ));
   }
 }
 
 /// @nodoc
 
-class _$_LoadSucess implements _LoadSucess {
-  const _$_LoadSucess(this.products);
+class _$_ApiDataState implements _ApiDataState {
+  const _$_ApiDataState(
+      {required this.hasReachedMax,
+      required this.isLoading,
+      required this.failureOrSuccessOption});
 
   @override
-  final Products products;
+  final bool hasReachedMax;
+  @override
+  final bool isLoading;
+  @override
+  final Option<Either<ApiDataFailure, Products>> failureOrSuccessOption;
 
   @override
   String toString() {
-    return 'ApiDataState.loadSucess(products: $products)';
+    return 'ApiDataState(hasReachedMax: $hasReachedMax, isLoading: $isLoading, failureOrSuccessOption: $failureOrSuccessOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LoadSucess &&
-            const DeepCollectionEquality().equals(other.products, products));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(products));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_LoadSucessCopyWith<_$_LoadSucess> get copyWith =>
-      __$$_LoadSucessCopyWithImpl<_$_LoadSucess>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(Products products) loadSucess,
-    required TResult Function(ApiDataFailure noteFailure) loadFailure,
-  }) {
-    return loadSucess(products);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(Products products)? loadSucess,
-    TResult Function(ApiDataFailure noteFailure)? loadFailure,
-  }) {
-    return loadSucess?.call(products);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(Products products)? loadSucess,
-    TResult Function(ApiDataFailure noteFailure)? loadFailure,
-    required TResult orElse(),
-  }) {
-    if (loadSucess != null) {
-      return loadSucess(products);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_LoadSucess value) loadSucess,
-    required TResult Function(_LoadFailure value) loadFailure,
-  }) {
-    return loadSucess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSucess value)? loadSucess,
-    TResult Function(_LoadFailure value)? loadFailure,
-  }) {
-    return loadSucess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSucess value)? loadSucess,
-    TResult Function(_LoadFailure value)? loadFailure,
-    required TResult orElse(),
-  }) {
-    if (loadSucess != null) {
-      return loadSucess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _LoadSucess implements ApiDataState {
-  const factory _LoadSucess(final Products products) = _$_LoadSucess;
-
-  Products get products => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$$_LoadSucessCopyWith<_$_LoadSucess> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_LoadFailureCopyWith<$Res> {
-  factory _$$_LoadFailureCopyWith(
-          _$_LoadFailure value, $Res Function(_$_LoadFailure) then) =
-      __$$_LoadFailureCopyWithImpl<$Res>;
-  $Res call({ApiDataFailure noteFailure});
-
-  $ApiDataFailureCopyWith<$Res> get noteFailure;
-}
-
-/// @nodoc
-class __$$_LoadFailureCopyWithImpl<$Res>
-    extends _$ApiDataStateCopyWithImpl<$Res>
-    implements _$$_LoadFailureCopyWith<$Res> {
-  __$$_LoadFailureCopyWithImpl(
-      _$_LoadFailure _value, $Res Function(_$_LoadFailure) _then)
-      : super(_value, (v) => _then(v as _$_LoadFailure));
-
-  @override
-  _$_LoadFailure get _value => super._value as _$_LoadFailure;
-
-  @override
-  $Res call({
-    Object? noteFailure = freezed,
-  }) {
-    return _then(_$_LoadFailure(
-      noteFailure == freezed
-          ? _value.noteFailure
-          : noteFailure // ignore: cast_nullable_to_non_nullable
-              as ApiDataFailure,
-    ));
-  }
-
-  @override
-  $ApiDataFailureCopyWith<$Res> get noteFailure {
-    return $ApiDataFailureCopyWith<$Res>(_value.noteFailure, (value) {
-      return _then(_value.copyWith(noteFailure: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$_LoadFailure implements _LoadFailure {
-  const _$_LoadFailure(this.noteFailure);
-
-  @override
-  final ApiDataFailure noteFailure;
-
-  @override
-  String toString() {
-    return 'ApiDataState.loadFailure(noteFailure: $noteFailure)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_LoadFailure &&
+            other is _$_ApiDataState &&
             const DeepCollectionEquality()
-                .equals(other.noteFailure, noteFailure));
+                .equals(other.hasReachedMax, hasReachedMax) &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            const DeepCollectionEquality()
+                .equals(other.failureOrSuccessOption, failureOrSuccessOption));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(noteFailure));
+      runtimeType,
+      const DeepCollectionEquality().hash(hasReachedMax),
+      const DeepCollectionEquality().hash(isLoading),
+      const DeepCollectionEquality().hash(failureOrSuccessOption));
 
   @JsonKey(ignore: true)
   @override
-  _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
-      __$$_LoadFailureCopyWithImpl<_$_LoadFailure>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(Products products) loadSucess,
-    required TResult Function(ApiDataFailure noteFailure) loadFailure,
-  }) {
-    return loadFailure(noteFailure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(Products products)? loadSucess,
-    TResult Function(ApiDataFailure noteFailure)? loadFailure,
-  }) {
-    return loadFailure?.call(noteFailure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(Products products)? loadSucess,
-    TResult Function(ApiDataFailure noteFailure)? loadFailure,
-    required TResult orElse(),
-  }) {
-    if (loadFailure != null) {
-      return loadFailure(noteFailure);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_LoadSucess value) loadSucess,
-    required TResult Function(_LoadFailure value) loadFailure,
-  }) {
-    return loadFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSucess value)? loadSucess,
-    TResult Function(_LoadFailure value)? loadFailure,
-  }) {
-    return loadFailure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_LoadSucess value)? loadSucess,
-    TResult Function(_LoadFailure value)? loadFailure,
-    required TResult orElse(),
-  }) {
-    if (loadFailure != null) {
-      return loadFailure(this);
-    }
-    return orElse();
-  }
+  _$$_ApiDataStateCopyWith<_$_ApiDataState> get copyWith =>
+      __$$_ApiDataStateCopyWithImpl<_$_ApiDataState>(this, _$identity);
 }
 
-abstract class _LoadFailure implements ApiDataState {
-  const factory _LoadFailure(final ApiDataFailure noteFailure) = _$_LoadFailure;
+abstract class _ApiDataState implements ApiDataState {
+  const factory _ApiDataState(
+      {required final bool hasReachedMax,
+      required final bool isLoading,
+      required final Option<Either<ApiDataFailure, Products>>
+          failureOrSuccessOption}) = _$_ApiDataState;
 
-  ApiDataFailure get noteFailure => throw _privateConstructorUsedError;
+  @override
+  bool get hasReachedMax => throw _privateConstructorUsedError;
+  @override
+  bool get isLoading => throw _privateConstructorUsedError;
+  @override
+  Option<Either<ApiDataFailure, Products>> get failureOrSuccessOption =>
+      throw _privateConstructorUsedError;
+  @override
   @JsonKey(ignore: true)
-  _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
+  _$$_ApiDataStateCopyWith<_$_ApiDataState> get copyWith =>
       throw _privateConstructorUsedError;
 }

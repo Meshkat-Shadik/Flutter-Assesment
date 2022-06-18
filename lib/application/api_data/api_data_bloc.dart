@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
 import 'package:ecommerce_demo/domain/failures.dart';
 import 'package:ecommerce_demo/domain/i_api_repository.dart';
 import 'package:ecommerce_demo/infrastructure/model/api_data_model.dart';
@@ -12,14 +13,37 @@ part 'api_data_bloc.freezed.dart';
 @injectable
 class ApiDataBloc extends Bloc<ApiDataEvent, ApiDataState> {
   final IApiRepository _iApiRepository;
-  ApiDataBloc(this._iApiRepository) : super(const ApiDataState.initial()) {
+  ApiDataBloc(this._iApiRepository) : super(ApiDataState.initial()) {
     on<_WatchAllStarted>((event, emit) async {
-      emit(const ApiDataState.loadInProgress());
-      var products = await _iApiRepository.getAllProducts();
-      emit(products.fold(
-        (l) => ApiDataState.loadFailure(l),
-        (prod) => ApiDataState.loadSucess(prod),
-      ));
+      Either<ApiDataFailure, Products>? failureOrSuccess;
+      if (state.hasReachedMax) return;
+      emit(
+        state.copyWith(
+          isLoading: true,
+          hasReachedMax: false,
+          failureOrSuccessOption: none(),
+        ),
+      );
+      failureOrSuccess = await _iApiRepository.getAllProducts();
+
+      emit(
+        failureOrSuccess.fold(
+          (l) => state.copyWith(
+            failureOrSuccessOption: optionOf(failureOrSuccess),
+            hasReachedMax: false,
+            isLoading: false,
+          ),
+          (r) => r.results!.isEmpty
+              ? state.copyWith(
+                  hasReachedMax: true,
+                )
+              : state.copyWith(
+                  isLoading: false,
+                  hasReachedMax: false,
+                  failureOrSuccessOption: optionOf(failureOrSuccess),
+                ),
+        ),
+      );
     });
   }
 }
