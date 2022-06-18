@@ -1,22 +1,21 @@
 part of 'api_data_bloc.dart';
 
+enum ApiStatus { initial, success, failure }
+
 @freezed
 class ApiDataState with _$ApiDataState {
   const factory ApiDataState({
     required bool hasReachedMax,
-    required bool isLoading,
-    required Option<Either<ApiDataFailure, Products>> failureOrSuccessOption,
+    required ApiStatus status,
+    required Option<Either<ApiDataFailure, List<Result>>>
+        failureOrSuccessOption,
+    required List<Result> productList,
   }) = _ApiDataState;
 
   factory ApiDataState.initial() => ApiDataState(
         hasReachedMax: false,
-        isLoading: true,
+        status: ApiStatus.initial,
         failureOrSuccessOption: none(),
+        productList: <Result>[],
       );
-
-  // const factory ApiDataState.initial() = _Initial;
-  // const factory ApiDataState.loadInProgress() = _LoadInProgress;
-  // const factory ApiDataState.loadSucess(Products products) = _LoadSucess;
-  // const factory ApiDataState.loadFailure(ApiDataFailure noteFailure) =
-  //     _LoadFailure;
 }

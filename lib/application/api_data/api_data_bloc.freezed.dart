@@ -168,9 +168,10 @@ abstract class _WatchAllStarted implements ApiDataEvent {
 /// @nodoc
 mixin _$ApiDataState {
   bool get hasReachedMax => throw _privateConstructorUsedError;
-  bool get isLoading => throw _privateConstructorUsedError;
-  Option<Either<ApiDataFailure, Products>> get failureOrSuccessOption =>
+  ApiStatus get status => throw _privateConstructorUsedError;
+  Option<Either<ApiDataFailure, List<Result>>> get failureOrSuccessOption =>
       throw _privateConstructorUsedError;
+  List<Result> get productList => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApiDataStateCopyWith<ApiDataState> get copyWith =>
@@ -184,8 +185,9 @@ abstract class $ApiDataStateCopyWith<$Res> {
       _$ApiDataStateCopyWithImpl<$Res>;
   $Res call(
       {bool hasReachedMax,
-      bool isLoading,
-      Option<Either<ApiDataFailure, Products>> failureOrSuccessOption});
+      ApiStatus status,
+      Option<Either<ApiDataFailure, List<Result>>> failureOrSuccessOption,
+      List<Result> productList});
 }
 
 /// @nodoc
@@ -199,22 +201,27 @@ class _$ApiDataStateCopyWithImpl<$Res> implements $ApiDataStateCopyWith<$Res> {
   @override
   $Res call({
     Object? hasReachedMax = freezed,
-    Object? isLoading = freezed,
+    Object? status = freezed,
     Object? failureOrSuccessOption = freezed,
+    Object? productList = freezed,
   }) {
     return _then(_value.copyWith(
       hasReachedMax: hasReachedMax == freezed
           ? _value.hasReachedMax
           : hasReachedMax // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoading: isLoading == freezed
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as ApiStatus,
       failureOrSuccessOption: failureOrSuccessOption == freezed
           ? _value.failureOrSuccessOption
           : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
-              as Option<Either<ApiDataFailure, Products>>,
+              as Option<Either<ApiDataFailure, List<Result>>>,
+      productList: productList == freezed
+          ? _value.productList
+          : productList // ignore: cast_nullable_to_non_nullable
+              as List<Result>,
     ));
   }
 }
@@ -228,8 +235,9 @@ abstract class _$$_ApiDataStateCopyWith<$Res>
   @override
   $Res call(
       {bool hasReachedMax,
-      bool isLoading,
-      Option<Either<ApiDataFailure, Products>> failureOrSuccessOption});
+      ApiStatus status,
+      Option<Either<ApiDataFailure, List<Result>>> failureOrSuccessOption,
+      List<Result> productList});
 }
 
 /// @nodoc
@@ -246,22 +254,27 @@ class __$$_ApiDataStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? hasReachedMax = freezed,
-    Object? isLoading = freezed,
+    Object? status = freezed,
     Object? failureOrSuccessOption = freezed,
+    Object? productList = freezed,
   }) {
     return _then(_$_ApiDataState(
       hasReachedMax: hasReachedMax == freezed
           ? _value.hasReachedMax
           : hasReachedMax // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoading: isLoading == freezed
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as ApiStatus,
       failureOrSuccessOption: failureOrSuccessOption == freezed
           ? _value.failureOrSuccessOption
           : failureOrSuccessOption // ignore: cast_nullable_to_non_nullable
-              as Option<Either<ApiDataFailure, Products>>,
+              as Option<Either<ApiDataFailure, List<Result>>>,
+      productList: productList == freezed
+          ? _value._productList
+          : productList // ignore: cast_nullable_to_non_nullable
+              as List<Result>,
     ));
   }
 }
@@ -271,19 +284,27 @@ class __$$_ApiDataStateCopyWithImpl<$Res>
 class _$_ApiDataState implements _ApiDataState {
   const _$_ApiDataState(
       {required this.hasReachedMax,
-      required this.isLoading,
-      required this.failureOrSuccessOption});
+      required this.status,
+      required this.failureOrSuccessOption,
+      required final List<Result> productList})
+      : _productList = productList;
 
   @override
   final bool hasReachedMax;
   @override
-  final bool isLoading;
+  final ApiStatus status;
   @override
-  final Option<Either<ApiDataFailure, Products>> failureOrSuccessOption;
+  final Option<Either<ApiDataFailure, List<Result>>> failureOrSuccessOption;
+  final List<Result> _productList;
+  @override
+  List<Result> get productList {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_productList);
+  }
 
   @override
   String toString() {
-    return 'ApiDataState(hasReachedMax: $hasReachedMax, isLoading: $isLoading, failureOrSuccessOption: $failureOrSuccessOption)';
+    return 'ApiDataState(hasReachedMax: $hasReachedMax, status: $status, failureOrSuccessOption: $failureOrSuccessOption, productList: $productList)';
   }
 
   @override
@@ -293,17 +314,20 @@ class _$_ApiDataState implements _ApiDataState {
             other is _$_ApiDataState &&
             const DeepCollectionEquality()
                 .equals(other.hasReachedMax, hasReachedMax) &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            const DeepCollectionEquality().equals(other.status, status) &&
             const DeepCollectionEquality()
-                .equals(other.failureOrSuccessOption, failureOrSuccessOption));
+                .equals(other.failureOrSuccessOption, failureOrSuccessOption) &&
+            const DeepCollectionEquality()
+                .equals(other._productList, _productList));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(hasReachedMax),
-      const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(failureOrSuccessOption));
+      const DeepCollectionEquality().hash(status),
+      const DeepCollectionEquality().hash(failureOrSuccessOption),
+      const DeepCollectionEquality().hash(_productList));
 
   @JsonKey(ignore: true)
   @override
@@ -314,17 +338,20 @@ class _$_ApiDataState implements _ApiDataState {
 abstract class _ApiDataState implements ApiDataState {
   const factory _ApiDataState(
       {required final bool hasReachedMax,
-      required final bool isLoading,
-      required final Option<Either<ApiDataFailure, Products>>
-          failureOrSuccessOption}) = _$_ApiDataState;
+      required final ApiStatus status,
+      required final Option<Either<ApiDataFailure, List<Result>>>
+          failureOrSuccessOption,
+      required final List<Result> productList}) = _$_ApiDataState;
 
   @override
   bool get hasReachedMax => throw _privateConstructorUsedError;
   @override
-  bool get isLoading => throw _privateConstructorUsedError;
+  ApiStatus get status => throw _privateConstructorUsedError;
   @override
-  Option<Either<ApiDataFailure, Products>> get failureOrSuccessOption =>
+  Option<Either<ApiDataFailure, List<Result>>> get failureOrSuccessOption =>
       throw _privateConstructorUsedError;
+  @override
+  List<Result> get productList => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_ApiDataStateCopyWith<_$_ApiDataState> get copyWith =>

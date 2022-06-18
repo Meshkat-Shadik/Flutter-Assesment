@@ -25,10 +25,6 @@ const floatingBtnGradient = LinearGradient(
   tileMode: TileMode.clamp,
 );
 
-//error page codes
-const int UNEXPECTED_ERROR_CODE = 1;
-const int INTERNET_ERROR_CODE = 2;
-const int REQUEST_DENIED_CODE = 3;
 
 //home text size
 const double hTitleFontSize = 14;

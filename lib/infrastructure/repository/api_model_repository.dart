@@ -9,11 +9,14 @@ import 'package:injectable/injectable.dart';
 @LazySingleton(as: IApiRepository)
 class ApiModelRepository implements IApiRepository {
   @override
-  Future<Either<ApiDataFailure, Products>> getAllProducts() async {
+  Future<Either<ApiDataFailure, List<Result>>> getAllProducts(
+      [int offset = 0, int limit = 10]) async {
     try {
-      final response = await http.get(Uri.parse(ApiPath.allData));
+      final response = await http.get(
+        Uri.parse('${ApiPath.allData}limit=$limit&offset=$offset'),
+      );
       final bodyData = apiDataFromJson(response.bodyBytes);
-      final products = bodyData.data?.products;
+      final products = bodyData.data?.products?.results;
       // print(products!.results!.first.productName);
       if (products != null) {
         return right(products);

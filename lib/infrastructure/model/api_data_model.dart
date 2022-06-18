@@ -17,6 +17,9 @@ Result resultDataFromJson(String str) => Result.fromJson(json.decode(str));
 
 Products productDataFromJson(String str) => Products.fromJson(json.decode(str));
 
+List<Result> userModelFromJson(String str) =>
+    List<Result>.from(json.decode(str).map((x) => Result.fromJson(x)));
+
 String apiDataToJson(ApiData data) => json.encode(data.toJson());
 
 @freezed
