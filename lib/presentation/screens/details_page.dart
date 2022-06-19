@@ -6,6 +6,7 @@ import 'package:ecommerce_demo/presentation/widgets/image_carousel.dart';
 import 'package:ecommerce_demo/presentation/widgets/taka_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_html/flutter_html.dart';
 
 class DetailsPage extends HookWidget {
   const DetailsPage({
@@ -224,13 +225,8 @@ class DetailsPage extends HookWidget {
             const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Text(
-                'জীবের মধ্যে সবচেয়ে সম্পূর্ণতা মানুষের। কিন্তু সবচেয়ে অসম্পূর্ণ হয়ে সে জন্মগ্রহণ করে। বাঘ ভালুক তার জীবনযাত্রার পনেরো- আনা মূলধন নিয়ে আসে প্রকৃতির মালখানা থেকে। জীবরঙ্গভূমিতে মানুষ এসে দেখা দেয় দুই শূন্য হাতে মুঠো বেঁধে।জীবের মধ্যে সবচেয়ে সম্পূর্ণতা মানুষের। কিন্তু সবচেয়ে অসম্পূর্ণ হয়ে সে জন্মগ্রহণ করে। বাঘ ভালুক তার জীবনযাত্রার পনেরো- আনা মূলধন নিয়ে আসে প্রকৃতির মালখানা থেকে। জীবরঙ্গভূমিতে মানুষ এসে দেখা দেয় দুই শূন্য হাতে মুঠো বেঁধে।',
-                style: detailsProductTitle.copyWith(
-                  fontSize: dBistaritoDescFontSize,
-                  fontWeight: FontWeight.normal,
-                  letterSpacing: 2,
-                ),
+              child: Html(
+                data: productResult.description,
               ),
             ),
             const SizedBox(height: 20),

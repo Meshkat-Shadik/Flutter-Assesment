@@ -91,15 +91,21 @@ class MyHomePage extends HookWidget {
                                       : false,
                                 ),
                                 productResult: Result(
-                                  productName: state.productList[index].productName,
+                                  productName:
+                                      state.productList[index].productName,
                                   brand: state.productList[index].brand,
                                   seller: state.productList[index].seller,
                                   images: state.productList[index].images!,
                                   charge: Charge(
-                                    currentCharge: state.productList[index].charge!.currentCharge,
-                                    sellingPrice: state.productList[index].charge!.sellingPrice,
-                                    profit: state.productList[index].charge!.profit,
+                                    currentCharge: state.productList[index]
+                                        .charge!.currentCharge,
+                                    sellingPrice: state.productList[index]
+                                        .charge!.sellingPrice,
+                                    profit:
+                                        state.productList[index].charge!.profit,
                                   ),
+                                  description:
+                                      state.productList[index].description,
                                 ),
                               );
                             }

@@ -4,12 +4,12 @@ import 'package:ecommerce_demo/infrastructure/model/api_data_model.dart';
 import 'package:flutter/material.dart';
 
 class ImageCarousel extends StatelessWidget {
-  ImageCarousel({
+  const ImageCarousel({
     Key? key,
     required this.imageList,
   }) : super(key: key);
 
-  List<ApiImage> imageList;
+  final List<ApiImage> imageList;
 
   @override
   Widget build(BuildContext context) {
