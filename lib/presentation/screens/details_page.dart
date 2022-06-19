@@ -1,4 +1,5 @@
 import 'package:ecommerce_demo/constants.dart';
+import 'package:ecommerce_demo/infrastructure/model/api_data_model.dart';
 import 'package:ecommerce_demo/presentation/widgets/custom_search_field.dart';
 import 'package:ecommerce_demo/presentation/widgets/expanded_fab_button.dart';
 import 'package:ecommerce_demo/presentation/widgets/image_carousel.dart';
@@ -7,7 +8,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
 class DetailsPage extends HookWidget {
-  const DetailsPage({Key? key}) : super(key: key);
+  const DetailsPage({
+    Key? key,
+    required this.productResult,
+  }) : super(key: key);
+
+  final Result productResult;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +42,9 @@ class DetailsPage extends HookWidget {
                 ],
               ),
             ),
-            const ImageCarousel(),
+            ImageCarousel(
+              imageList: productResult.images!,
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15.0),
               child: Column(
@@ -44,8 +52,8 @@ class DetailsPage extends HookWidget {
                   const SizedBox(height: 20),
                   Container(
                     alignment: Alignment.centerLeft,
-                    child: const Text(
-                      'প্রিঞ্জেলস অনিওন চিপস ৪২ গ্রাম',
+                    child: Text(
+                      productResult.productName!,
                       style: detailsProductTitle,
                       textAlign: TextAlign.start,
                     ),
@@ -57,8 +65,8 @@ class DetailsPage extends HookWidget {
                         'ব্রান্ডঃ ',
                         style: dBrandDistributorNameStyle,
                       ),
-                      const Text(
-                        'প্রিঞ্জেলস',
+                      Text(
+                        productResult.brand!.name!,
                         style: dBrandDistributorValueStyle,
                       ),
                       const SizedBox(width: 10),
@@ -75,8 +83,8 @@ class DetailsPage extends HookWidget {
                         'ডিস্ট্রিবিউটরঃ ',
                         style: dBrandDistributorNameStyle,
                       ),
-                      const Text(
-                        'মোঃ মোবারাক হোসেন',
+                      Text(
+                        productResult.seller!,
                         style: dBrandDistributorValueStyle,
                       ),
                     ],
@@ -97,14 +105,14 @@ class DetailsPage extends HookWidget {
                             child: Column(
                               children: [
                                 DetailsRowItem(
-                                  amount: 220.0,
+                                  amount: productResult.charge!.currentCharge!,
                                   title: 'ক্রয়মূল্যঃ',
                                   textStyle: dkroyPriceStyle,
                                 ),
                                 SizedBox(
                                   height: 36,
                                   child: DetailsRowItem(
-                                    amount: 250.0,
+                                    amount: productResult.charge!.sellingPrice!,
                                     title: 'বিক্রয়মূল্যঃ',
                                     textStyle: dBikroyLavPriceStyle,
                                     testCheckingValue: testCheckingValue,
@@ -116,7 +124,7 @@ class DetailsPage extends HookWidget {
                                   style: dashedLineStyle,
                                 ),
                                 DetailsRowItem(
-                                  amount: 30.0,
+                                  amount: productResult.charge!.profit!,
                                   title: 'লাভঃ',
                                   textStyle: dBikroyLavPriceStyle,
                                 ),

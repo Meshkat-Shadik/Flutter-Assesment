@@ -1,11 +1,15 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerce_demo/constants.dart';
+import 'package:ecommerce_demo/infrastructure/model/api_data_model.dart';
 import 'package:flutter/material.dart';
 
 class ImageCarousel extends StatelessWidget {
-  const ImageCarousel({
+  ImageCarousel({
     Key? key,
+    required this.imageList,
   }) : super(key: key);
+
+  List<ApiImage> imageList;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +20,7 @@ class ImageCarousel extends StatelessWidget {
         enlargeCenterPage: true,
         enlargeStrategy: CenterPageEnlargeStrategy.height,
       ),
-      items: [1, 2, 3, 4, 5].map((i) {
+      items: imageList.map((i) {
         return Builder(
           builder: (BuildContext context) {
             return Container(
@@ -26,8 +30,8 @@ class ImageCarousel extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Center(
-                child: Image.asset(
-                  'assets/potato_chips.png',
+                child: Image.network(
+                  imageList.first.image!,
                   height: 273,
                   width: 194,
                   fit: BoxFit.contain,

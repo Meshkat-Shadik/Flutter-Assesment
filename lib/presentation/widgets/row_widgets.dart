@@ -1,4 +1,5 @@
 import 'package:ecommerce_demo/constants.dart';
+import 'package:ecommerce_demo/infrastructure/model/api_data_model.dart';
 import 'package:ecommerce_demo/infrastructure/model/home_page_item_model/home_page_item_model.dart';
 import 'package:ecommerce_demo/presentation/screens/details_page.dart';
 import 'package:ecommerce_demo/presentation/widgets/custom_circle_button.dart';
@@ -11,9 +12,11 @@ class RowItem extends HookWidget {
     Key? key,
     required this.width,
     required this.homeItemModel,
+    this.productResult,
   }) : super(key: key);
   final double width;
   final HomeItemModel homeItemModel;
+  final Result? productResult;
 
   @override
   Widget build(BuildContext context) {
@@ -51,11 +54,15 @@ class RowItem extends HookWidget {
                   const SizedBox(height: 6),
                   InkWell(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const DetailsPage(),
-                          ));
+                      if (productResult != null) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DetailsPage(
+                                productResult: productResult!,
+                              ),
+                            ));
+                      }
                     },
                     child: Text(
                       homeItemModel.title!,

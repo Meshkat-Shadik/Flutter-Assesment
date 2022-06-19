@@ -33,11 +33,19 @@ class ApiDataBloc extends Bloc<ApiDataEvent, ApiDataState> {
         try {
           if (state.status == ApiStatus.initial) {
             final products = await _iApiRepository.getAllProducts();
-            return emit(state.copyWith(
-              status: ApiStatus.success,
-              productList: products.asRight(),
-              hasReachedMax: false,
-            ));
+            if (products.asRight().isEmpty) {
+              return emit(state.copyWith(
+                status: ApiStatus.failure,
+                productList: [],
+                hasReachedMax: false,
+              ));
+            } else {
+              return emit(state.copyWith(
+                status: ApiStatus.success,
+                productList: products.asRight(),
+                hasReachedMax: false,
+              ));
+            }
           }
           final products =
               await _iApiRepository.getAllProducts(state.productList.length);

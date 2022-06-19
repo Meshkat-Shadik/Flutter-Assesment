@@ -1,5 +1,6 @@
 import 'package:ecommerce_demo/application/api_data/api_data_bloc.dart';
 import 'package:ecommerce_demo/constants.dart';
+import 'package:ecommerce_demo/infrastructure/model/api_data_model.dart';
 import 'package:ecommerce_demo/infrastructure/model/home_page_item_model/home_page_item_model.dart';
 import 'package:ecommerce_demo/presentation/widgets/bottom_loader.dart';
 import 'package:ecommerce_demo/presentation/widgets/custom_search_field.dart';
@@ -88,6 +89,17 @@ class MyHomePage extends HookWidget {
                                   stock: state.productList[index].stock! > 0
                                       ? true
                                       : false,
+                                ),
+                                productResult: Result(
+                                  productName: state.productList[index].productName,
+                                  brand: state.productList[index].brand,
+                                  seller: state.productList[index].seller,
+                                  images: state.productList[index].images!,
+                                  charge: Charge(
+                                    currentCharge: state.productList[index].charge!.currentCharge,
+                                    sellingPrice: state.productList[index].charge!.sellingPrice,
+                                    profit: state.productList[index].charge!.profit,
+                                  ),
                                 ),
                               );
                             }

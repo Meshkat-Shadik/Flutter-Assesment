@@ -58,7 +58,7 @@ _$_Result _$$_ResultFromJson(Map<String, dynamic> json) => _$_Result(
           ? null
           : Charge.fromJson(json['charge'] as Map<String, dynamic>),
       images: (json['images'] as List<dynamic>?)
-          ?.map((e) => Image.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ApiImage.fromJson(e as Map<String, dynamic>))
           .toList(),
       slug: json['slug'] as String?,
       productName: json['product_name'] as String?,
@@ -185,14 +185,15 @@ Map<String, dynamic> _$$_ChargeToJson(_$_Charge instance) => <String, dynamic>{
       'message': instance.message,
     };
 
-_$_Image _$$_ImageFromJson(Map<String, dynamic> json) => _$_Image(
+_$_ApiImage _$$_ApiImageFromJson(Map<String, dynamic> json) => _$_ApiImage(
       id: json['id'] as int?,
       image: json['image'] as String?,
       isPrimary: json['is_primary'] as bool?,
       product: json['product'] as int?,
     );
 
-Map<String, dynamic> _$$_ImageToJson(_$_Image instance) => <String, dynamic>{
+Map<String, dynamic> _$$_ApiImageToJson(_$_ApiImage instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'image': instance.image,
       'is_primary': instance.isPrimary,

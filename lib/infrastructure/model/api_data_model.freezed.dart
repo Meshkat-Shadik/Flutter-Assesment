@@ -542,7 +542,7 @@ mixin _$Result {
   Brand? get brand => throw _privateConstructorUsedError;
   String? get image => throw _privateConstructorUsedError;
   Charge? get charge => throw _privateConstructorUsedError;
-  List<Image>? get images => throw _privateConstructorUsedError;
+  List<ApiImage>? get images => throw _privateConstructorUsedError;
   String? get slug => throw _privateConstructorUsedError;
   String? get productName => throw _privateConstructorUsedError;
   String? get model => throw _privateConstructorUsedError;
@@ -589,7 +589,7 @@ abstract class $ResultCopyWith<$Res> {
       Brand? brand,
       String? image,
       Charge? charge,
-      List<Image>? images,
+      List<ApiImage>? images,
       String? slug,
       String? productName,
       String? model,
@@ -693,7 +693,7 @@ class _$ResultCopyWithImpl<$Res> implements $ResultCopyWith<$Res> {
       images: images == freezed
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
-              as List<Image>?,
+              as List<ApiImage>?,
       slug: slug == freezed
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
@@ -854,7 +854,7 @@ abstract class _$$_ResultCopyWith<$Res> implements $ResultCopyWith<$Res> {
       Brand? brand,
       String? image,
       Charge? charge,
-      List<Image>? images,
+      List<ApiImage>? images,
       String? slug,
       String? productName,
       String? model,
@@ -961,7 +961,7 @@ class __$$_ResultCopyWithImpl<$Res> extends _$ResultCopyWithImpl<$Res>
       images: images == freezed
           ? _value._images
           : images // ignore: cast_nullable_to_non_nullable
-              as List<Image>?,
+              as List<ApiImage>?,
       slug: slug == freezed
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
@@ -1098,7 +1098,7 @@ class _$_Result implements _Result {
       this.brand,
       this.image,
       this.charge,
-      final List<Image>? images,
+      final List<ApiImage>? images,
       this.slug,
       this.productName,
       this.model,
@@ -1146,9 +1146,9 @@ class _$_Result implements _Result {
   final String? image;
   @override
   final Charge? charge;
-  final List<Image>? _images;
+  final List<ApiImage>? _images;
   @override
-  List<Image>? get images {
+  List<ApiImage>? get images {
     final value = _images;
     if (value == null) return null;
     // ignore: implicit_dynamic_type
@@ -1356,7 +1356,7 @@ abstract class _Result implements Result {
       final Brand? brand,
       final String? image,
       final Charge? charge,
-      final List<Image>? images,
+      final List<ApiImage>? images,
       final String? slug,
       final String? productName,
       final String? model,
@@ -1400,7 +1400,7 @@ abstract class _Result implements Result {
   @override
   Charge? get charge => throw _privateConstructorUsedError;
   @override
-  List<Image>? get images => throw _privateConstructorUsedError;
+  List<ApiImage>? get images => throw _privateConstructorUsedError;
   @override
   String? get slug => throw _privateConstructorUsedError;
   @override
@@ -2060,12 +2060,12 @@ abstract class _Charge implements Charge {
       throw _privateConstructorUsedError;
 }
 
-Image _$ImageFromJson(Map<String, dynamic> json) {
-  return _Image.fromJson(json);
+ApiImage _$ApiImageFromJson(Map<String, dynamic> json) {
+  return _ApiImage.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Image {
+mixin _$ApiImage {
   int? get id => throw _privateConstructorUsedError;
   String? get image => throw _privateConstructorUsedError;
   bool? get isPrimary => throw _privateConstructorUsedError;
@@ -2073,23 +2073,24 @@ mixin _$Image {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ImageCopyWith<Image> get copyWith => throw _privateConstructorUsedError;
+  $ApiImageCopyWith<ApiImage> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ImageCopyWith<$Res> {
-  factory $ImageCopyWith(Image value, $Res Function(Image) then) =
-      _$ImageCopyWithImpl<$Res>;
+abstract class $ApiImageCopyWith<$Res> {
+  factory $ApiImageCopyWith(ApiImage value, $Res Function(ApiImage) then) =
+      _$ApiImageCopyWithImpl<$Res>;
   $Res call({int? id, String? image, bool? isPrimary, int? product});
 }
 
 /// @nodoc
-class _$ImageCopyWithImpl<$Res> implements $ImageCopyWith<$Res> {
-  _$ImageCopyWithImpl(this._value, this._then);
+class _$ApiImageCopyWithImpl<$Res> implements $ApiImageCopyWith<$Res> {
+  _$ApiImageCopyWithImpl(this._value, this._then);
 
-  final Image _value;
+  final ApiImage _value;
   // ignore: unused_field
-  final $Res Function(Image) _then;
+  final $Res Function(ApiImage) _then;
 
   @override
   $Res call({
@@ -2120,21 +2121,23 @@ class _$ImageCopyWithImpl<$Res> implements $ImageCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_ImageCopyWith<$Res> implements $ImageCopyWith<$Res> {
-  factory _$$_ImageCopyWith(_$_Image value, $Res Function(_$_Image) then) =
-      __$$_ImageCopyWithImpl<$Res>;
+abstract class _$$_ApiImageCopyWith<$Res> implements $ApiImageCopyWith<$Res> {
+  factory _$$_ApiImageCopyWith(
+          _$_ApiImage value, $Res Function(_$_ApiImage) then) =
+      __$$_ApiImageCopyWithImpl<$Res>;
   @override
   $Res call({int? id, String? image, bool? isPrimary, int? product});
 }
 
 /// @nodoc
-class __$$_ImageCopyWithImpl<$Res> extends _$ImageCopyWithImpl<$Res>
-    implements _$$_ImageCopyWith<$Res> {
-  __$$_ImageCopyWithImpl(_$_Image _value, $Res Function(_$_Image) _then)
-      : super(_value, (v) => _then(v as _$_Image));
+class __$$_ApiImageCopyWithImpl<$Res> extends _$ApiImageCopyWithImpl<$Res>
+    implements _$$_ApiImageCopyWith<$Res> {
+  __$$_ApiImageCopyWithImpl(
+      _$_ApiImage _value, $Res Function(_$_ApiImage) _then)
+      : super(_value, (v) => _then(v as _$_ApiImage));
 
   @override
-  _$_Image get _value => super._value as _$_Image;
+  _$_ApiImage get _value => super._value as _$_ApiImage;
 
   @override
   $Res call({
@@ -2143,7 +2146,7 @@ class __$$_ImageCopyWithImpl<$Res> extends _$ImageCopyWithImpl<$Res>
     Object? isPrimary = freezed,
     Object? product = freezed,
   }) {
-    return _then(_$_Image(
+    return _then(_$_ApiImage(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -2166,11 +2169,11 @@ class __$$_ImageCopyWithImpl<$Res> extends _$ImageCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Image implements _Image {
-  const _$_Image({this.id, this.image, this.isPrimary, this.product});
+class _$_ApiImage implements _ApiImage {
+  const _$_ApiImage({this.id, this.image, this.isPrimary, this.product});
 
-  factory _$_Image.fromJson(Map<String, dynamic> json) =>
-      _$$_ImageFromJson(json);
+  factory _$_ApiImage.fromJson(Map<String, dynamic> json) =>
+      _$$_ApiImageFromJson(json);
 
   @override
   final int? id;
@@ -2183,14 +2186,14 @@ class _$_Image implements _Image {
 
   @override
   String toString() {
-    return 'Image(id: $id, image: $image, isPrimary: $isPrimary, product: $product)';
+    return 'ApiImage(id: $id, image: $image, isPrimary: $isPrimary, product: $product)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Image &&
+            other is _$_ApiImage &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.image, image) &&
             const DeepCollectionEquality().equals(other.isPrimary, isPrimary) &&
@@ -2208,23 +2211,23 @@ class _$_Image implements _Image {
 
   @JsonKey(ignore: true)
   @override
-  _$$_ImageCopyWith<_$_Image> get copyWith =>
-      __$$_ImageCopyWithImpl<_$_Image>(this, _$identity);
+  _$$_ApiImageCopyWith<_$_ApiImage> get copyWith =>
+      __$$_ApiImageCopyWithImpl<_$_ApiImage>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ImageToJson(this);
+    return _$$_ApiImageToJson(this);
   }
 }
 
-abstract class _Image implements Image {
-  const factory _Image(
+abstract class _ApiImage implements ApiImage {
+  const factory _ApiImage(
       {final int? id,
       final String? image,
       final bool? isPrimary,
-      final int? product}) = _$_Image;
+      final int? product}) = _$_ApiImage;
 
-  factory _Image.fromJson(Map<String, dynamic> json) = _$_Image.fromJson;
+  factory _ApiImage.fromJson(Map<String, dynamic> json) = _$_ApiImage.fromJson;
 
   @override
   int? get id => throw _privateConstructorUsedError;
@@ -2236,6 +2239,6 @@ abstract class _Image implements Image {
   int? get product => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_ImageCopyWith<_$_Image> get copyWith =>
+  _$$_ApiImageCopyWith<_$_ApiImage> get copyWith =>
       throw _privateConstructorUsedError;
 }

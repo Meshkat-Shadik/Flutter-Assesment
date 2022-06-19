@@ -63,7 +63,7 @@ abstract class Result with _$Result {
     Brand? brand,
     String? image,
     Charge? charge,
-    List<Image>? images,
+    List<ApiImage>? images,
     String? slug,
     String? productName,
     String? model,
@@ -135,13 +135,14 @@ abstract class Charge with _$Charge {
 }
 
 @freezed
-abstract class Image with _$Image {
-  const factory Image({
+abstract class ApiImage with _$ApiImage {
+  const factory ApiImage({
     int? id,
     String? image,
     bool? isPrimary,
     int? product,
-  }) = _Image;
+  }) = _ApiImage;
 
-  factory Image.fromJson(Map<String, dynamic> json) => _$ImageFromJson(json);
+  factory ApiImage.fromJson(Map<String, dynamic> json) =>
+      _$ApiImageFromJson(json);
 }
