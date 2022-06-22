@@ -28,7 +28,7 @@ class ExpandedFabButton extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {
-              if (testCheckingValue.value > 0) {
+              if (testCheckingValue.value > 1) {
                 testCheckingValue.value = testCheckingValue.value - 1;
               } else {
                 toggleButton.value = false;

@@ -21,7 +21,7 @@ class RowItem extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final toggleButton = useState(false);
-    final testCheckingValue = useState(0);
+    final testCheckingValue = useState(1);
 
     return Stack(
       clipBehavior: Clip.none,
@@ -72,17 +72,19 @@ class RowItem extends HookWidget {
                   ),
                   const SizedBox(height: 8),
                   RowPrice(
-                    kroyTaka: homeItemModel.kroy!,
-                    kroyPreviousTaka: homeItemModel.discount!,
-                    bikroyTaka: homeItemModel.bikroy!,
-                    lavTaka: homeItemModel.lav!,
+                    kroyTaka: homeItemModel.kroy! * testCheckingValue.value,
+                    kroyPreviousTaka:
+                        homeItemModel.discount! * testCheckingValue.value,
+                    bikroyTaka: homeItemModel.bikroy! * testCheckingValue.value,
+                    lavTaka: homeItemModel.lav! * testCheckingValue.value,
                     isTopRow: true,
                   ),
                   RowPrice(
-                    kroyTaka: homeItemModel.kroy!,
-                    kroyPreviousTaka: homeItemModel.discount!,
-                    bikroyTaka: homeItemModel.bikroy!,
-                    lavTaka: homeItemModel.lav!,
+                    kroyTaka: homeItemModel.kroy! * testCheckingValue.value,
+                    kroyPreviousTaka:
+                        homeItemModel.discount! * testCheckingValue.value,
+                    bikroyTaka: homeItemModel.bikroy! * testCheckingValue.value,
+                    lavTaka: homeItemModel.lav! * testCheckingValue.value,
                     isTopRow: false,
                   ),
                 ],

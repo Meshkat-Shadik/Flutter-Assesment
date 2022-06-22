@@ -59,7 +59,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
               return emit(state.copyWith(
                 showErrorMessages: AutovalidateMode.always,
                 status: SearchStatus.failure,
-
+                searchedList: [],
                 //failureOrSuccessOption: ,
               ));
             }

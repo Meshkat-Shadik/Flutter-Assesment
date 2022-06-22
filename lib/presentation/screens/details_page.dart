@@ -107,14 +107,17 @@ class DetailsPage extends HookWidget {
                             child: Column(
                               children: [
                                 DetailsRowItem(
-                                  amount: productResult.charge!.currentCharge!,
+                                  amount: productResult.charge!.currentCharge! *
+                                      testCheckingValue.value,
                                   title: 'ক্রয়মূল্যঃ',
                                   textStyle: dkroyPriceStyle,
                                 ),
                                 SizedBox(
                                   height: 36,
                                   child: DetailsRowItem(
-                                    amount: productResult.charge!.sellingPrice!,
+                                    amount:
+                                        productResult.charge!.sellingPrice! *
+                                            testCheckingValue.value,
                                     title: 'বিক্রয়মূল্যঃ',
                                     textStyle: dBikroyLavPriceStyle,
                                     testCheckingValue: testCheckingValue,
@@ -122,12 +125,13 @@ class DetailsPage extends HookWidget {
                                   ),
                                 ),
                                 const SizedBox(height: 5),
-                                DashLineView(
+                                const DashLineView(
                                   fillRate: 0.7,
                                 ),
                                 const SizedBox(height: 5),
                                 DetailsRowItem(
-                                  amount: productResult.charge!.profit!,
+                                  amount: productResult.charge!.profit! *
+                                      testCheckingValue.value,
                                   title: 'লাভঃ',
                                   textStyle: dBikroyLavPriceStyle,
                                 ),
