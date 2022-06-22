@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:ecommerce_demo/constants.dart';
 import 'package:ecommerce_demo/infrastructure/model/api_data_model.dart';
 import 'package:ecommerce_demo/infrastructure/model/home_page_item_model/home_page_item_model.dart';
+import 'package:ecommerce_demo/presentation/routes/router.gr.dart';
 import 'package:ecommerce_demo/presentation/screens/details_page.dart';
 import 'package:ecommerce_demo/presentation/widgets/custom_circle_button.dart';
 import 'package:ecommerce_demo/presentation/widgets/expanded_fab_button.dart';
@@ -57,13 +59,11 @@ class RowItem extends HookWidget {
                       InkWell(
                         onTap: () {
                           if (productResult != null) {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => DetailsPage(
-                                    productResult: productResult!,
-                                  ),
-                                ));
+                            context.router.push(
+                              DetailsPageRoute(
+                                productResult: productResult!,
+                              ),
+                            );
                           }
                         },
                         child: Text(

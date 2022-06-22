@@ -62,7 +62,7 @@ class CustomSearchField extends HookWidget {
               BlocProvider.of<SearchBloc>(context).state.searchInput.value.fold(
                     (l) => null,
                     (r) => context.router.push(
-                      const SearchScreenRoute(),
+                      HomeSearchReusableRoute(isHomePage: true),
                     ),
                   );
             },
