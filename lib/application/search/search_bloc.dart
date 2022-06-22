@@ -8,7 +8,7 @@ import 'package:ecommerce_demo/infrastructure/model/api_data_model.dart';
 import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import '../../domain/dartz_x.dart';
+import 'package:ecommerce_demo/domain/dartz_x.dart';
 
 part 'search_event.dart';
 part 'search_state.dart';
@@ -31,14 +31,14 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
     on<_SearchButtonPressed>(
       (event, emit) async {
         if (state.hasReachedMax) return;
-        print(state.searchInput);
+        //  print(state.searchInput);
         try {
           Either<ApiDataFailure, List<Result>> products;
-          String? searchNameVal;
+          //   String? searchNameVal;
           if (state.status == SearchStatus.initial) {
             if (state.searchInput.isValid()) {
-              print('Kisu ekta hocche!');
-              searchNameVal = state.searchInput.getOrCrash();
+              // print('Kisu ekta hocche!');
+              // searchNameVal = state.searchInput.getOrCrash();
               products =
                   await _iApiRepository.getSearchedProduct(state.searchInput);
               //  print(products);

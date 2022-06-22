@@ -26,96 +26,103 @@ class RowItem extends HookWidget {
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        Container(
-          height: 267,
-          width: width,
-          margin: const EdgeInsets.only(top: 30),
-          padding: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            color: bgWhite,
-          ),
-          child: Stack(
-            children: [
-              Column(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    height: 148,
-                    width: width,
-                    color: bgWhite,
-                    child: Image.network(
-                      homeItemModel.image!,
-                      height: 117,
-                      width: 87,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                  const SizedBox(height: 6),
-                  InkWell(
-                    onTap: () {
-                      if (productResult != null) {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => DetailsPage(
-                                productResult: productResult!,
-                              ),
-                            ));
-                      }
-                    },
-                    child: Text(
-                      homeItemModel.title!,
-                      style: hTitleStyle,
-                      maxLines: 2,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  RowPrice(
-                    kroyTaka: homeItemModel.kroy! * testCheckingValue.value,
-                    kroyPreviousTaka:
-                        homeItemModel.discount! * testCheckingValue.value,
-                    bikroyTaka: homeItemModel.bikroy! * testCheckingValue.value,
-                    lavTaka: homeItemModel.lav! * testCheckingValue.value,
-                    isTopRow: true,
-                  ),
-                  RowPrice(
-                    kroyTaka: homeItemModel.kroy! * testCheckingValue.value,
-                    kroyPreviousTaka:
-                        homeItemModel.discount! * testCheckingValue.value,
-                    bikroyTaka: homeItemModel.bikroy! * testCheckingValue.value,
-                    lavTaka: homeItemModel.lav! * testCheckingValue.value,
-                    isTopRow: false,
-                  ),
-                ],
+        Column(
+          children: [
+            Container(
+              height: 265,
+              width: width,
+              margin: const EdgeInsets.only(top: 30),
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: bgWhite,
               ),
-              !homeItemModel.stock!
-                  ? Positioned(
-                      right: 0,
-                      child: Container(
-                        height: 20,
-                        width: 70,
-                        decoration: BoxDecoration(
-                          color: badgeErrorShadeColor,
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        child: const Center(
-                          child: Text(
-                            'স্টকে নেই',
-                            style: bageErrorTextStyle,
-                          ),
+              child: Stack(
+                children: [
+                  Column(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        height: 148,
+                        width: width,
+                        color: bgWhite,
+                        child: Image.network(
+                          homeItemModel.image!,
+                          height: 117,
+                          width: 87,
+                          fit: BoxFit.contain,
                         ),
                       ),
-                    )
-                  : Container(),
-            ],
-          ),
+                      const SizedBox(height: 6),
+                      InkWell(
+                        onTap: () {
+                          if (productResult != null) {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => DetailsPage(
+                                    productResult: productResult!,
+                                  ),
+                                ));
+                          }
+                        },
+                        child: Text(
+                          homeItemModel.title!,
+                          style: hTitleStyle,
+                          maxLines: 2,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      RowPrice(
+                        kroyTaka: homeItemModel.kroy! * testCheckingValue.value,
+                        kroyPreviousTaka:
+                            homeItemModel.discount! * testCheckingValue.value,
+                        bikroyTaka:
+                            homeItemModel.bikroy! * testCheckingValue.value,
+                        lavTaka: homeItemModel.lav! * testCheckingValue.value,
+                        isTopRow: true,
+                      ),
+                      RowPrice(
+                        kroyTaka: homeItemModel.kroy! * testCheckingValue.value,
+                        kroyPreviousTaka:
+                            homeItemModel.discount! * testCheckingValue.value,
+                        bikroyTaka:
+                            homeItemModel.bikroy! * testCheckingValue.value,
+                        lavTaka: homeItemModel.lav! * testCheckingValue.value,
+                        isTopRow: false,
+                      ),
+                    ],
+                  ),
+                  !homeItemModel.stock!
+                      ? Positioned(
+                          right: 0,
+                          child: Container(
+                            height: 20,
+                            width: 70,
+                            decoration: BoxDecoration(
+                              color: badgeErrorShadeColor,
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: const Center(
+                              child: Text(
+                                'স্টকে নেই',
+                                style: bageErrorTextStyle,
+                              ),
+                            ),
+                          ),
+                        )
+                      : Container(),
+                ],
+              ),
+            ),
+            const SizedBox(height: 50),
+          ],
         ),
         toggleButton.value
             ? Positioned(
                 left: 25,
                 right: 25,
-                bottom: -18,
+                bottom: 30,
                 child: ExpandedFabButton(
                   testCheckingValue: testCheckingValue,
                   toggleButton: toggleButton,
@@ -123,7 +130,7 @@ class RowItem extends HookWidget {
               )
             : homeItemModel.stock!
                 ? Positioned(
-                    bottom: -18,
+                    bottom: 30,
                     left: width / 2.4,
                     child: InkWell(
                       onTap: () => toggleButton.value = true,

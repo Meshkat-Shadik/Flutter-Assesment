@@ -1,4 +1,3 @@
-import 'package:ecommerce_demo/constants.dart';
 import 'package:flutter/material.dart';
 
 class DashLineView extends StatelessWidget {

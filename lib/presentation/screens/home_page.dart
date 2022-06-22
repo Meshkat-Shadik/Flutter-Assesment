@@ -56,7 +56,7 @@ class MyHomePage extends HookWidget {
                         controller: controller,
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
-                          childAspectRatio: 2 / 3.3,
+                          childAspectRatio: 2 / 3.87,
                           crossAxisCount: 2,
                           crossAxisSpacing: 5,
                         ),
