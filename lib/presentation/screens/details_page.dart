@@ -1,6 +1,7 @@
 import 'package:ecommerce_demo/constants.dart';
 import 'package:ecommerce_demo/infrastructure/model/api_data_model.dart';
 import 'package:ecommerce_demo/presentation/widgets/custom_search_field.dart';
+import 'package:ecommerce_demo/presentation/widgets/dash_line.dart';
 import 'package:ecommerce_demo/presentation/widgets/expanded_fab_button.dart';
 import 'package:ecommerce_demo/presentation/widgets/image_carousel.dart';
 import 'package:ecommerce_demo/presentation/widgets/taka_widget.dart';
@@ -97,7 +98,7 @@ class DetailsPage extends HookWidget {
                       Column(
                         children: [
                           Container(
-                            height: 116,
+                            height: 136,
                             decoration: BoxDecoration(
                               color: bgWhite,
                               borderRadius: BorderRadius.circular(15),
@@ -120,10 +121,11 @@ class DetailsPage extends HookWidget {
                                     toggleButton: isToggleButton,
                                   ),
                                 ),
-                                Text(
-                                  dashedLine,
-                                  style: dashedLineStyle,
+                                const SizedBox(height: 5),
+                                DashLineView(
+                                  fillRate: 0.7,
                                 ),
+                                const SizedBox(height: 5),
                                 DetailsRowItem(
                                   amount: productResult.charge!.profit!,
                                   title: 'লাভঃ',
@@ -136,7 +138,7 @@ class DetailsPage extends HookWidget {
                       ),
                       const SizedBox(height: 180),
                       Positioned(
-                        top: 90.0,
+                        top: 110.0,
                         left: size.width / 2.75,
                         child: GestureDetector(
                           onTap: () {

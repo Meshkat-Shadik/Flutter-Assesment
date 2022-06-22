@@ -1,29 +1,30 @@
-import 'package:ecommerce_demo/application/api_data/api_data_bloc.dart';
+import 'package:ecommerce_demo/application/search/search_bloc.dart';
 import 'package:ecommerce_demo/constants.dart';
 import 'package:ecommerce_demo/infrastructure/model/api_data_model.dart';
 import 'package:ecommerce_demo/infrastructure/model/home_page_item_model/home_page_item_model.dart';
 import 'package:ecommerce_demo/presentation/widgets/bottom_loader.dart';
-import 'package:ecommerce_demo/presentation/widgets/custom_search_field.dart';
 import 'package:ecommerce_demo/presentation/widgets/row_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
-class MyHomePage extends HookWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class SearchScreen extends HookWidget {
+  const SearchScreen({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // BlocProvider.of<ApiDataBloc>(context)..add()
+
+    // print(BlocProvider.of<ApiDataBloc>(context).state.searchInput);
+    // print(BlocProvider.of<SearchBloc>(context).state.searchedList.toString());
+
     final controller = useScrollController();
     void onScroll() {
       if (controller.position.maxScrollExtent == controller.offset) {
-        // if (BlocProvider.of<ApiDataBloc>(context).state.searchLoaded) {
-        //   BlocProvider.of<ApiDataBloc>(context)
-        //       .add(const ApiDataEvent.searchPressed());
-        // } else {
-        BlocProvider.of<ApiDataBloc>(context)
-            .add(const ApiDataEvent.watchAllstarted());
-        // }
+        BlocProvider.of<SearchBloc>(context)
+            .add(const SearchEvent.searchButtonPressed());
       }
     }
 
@@ -36,21 +37,32 @@ class MyHomePage extends HookWidget {
     double rowItemWidth = (size.width - 45) / 2;
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: bgPrimaryAppBarColor,
+          title: Text(
+            'Searched Result for ' +
+                BlocProvider.of<SearchBloc>(context)
+                    .state
+                    .searchInput
+                    .getOrCrash(),
+            style: dBrandDistributorValueStyle,
+          ),
+        ),
         backgroundColor: bgPrimaryColor,
         body: Padding(
           padding: const EdgeInsets.all(15.0),
-          child: BlocBuilder<ApiDataBloc, ApiDataState>(
+          child: BlocBuilder<SearchBloc, SearchState>(
             builder: (context, state) {
-              if (state.status == ApiStatus.failure) {
+              if (state.status == SearchStatus.failure) {
                 return const Center(child: Text('failed to fetch products'));
-              } else if (state.status == ApiStatus.success) {
-                if (state.productList.isEmpty) {
+              } else if (state.status == SearchStatus.success) {
+                if (state.searchedList.isEmpty) {
                   return const Center(child: Text('No more products'));
                 }
                 return Column(
                   children: [
                     const SizedBox(height: 24),
-                    const CustomSearchField(),
+                    //  const CustomSearchField(),
                     Flexible(
                       child: GridView.builder(
                         controller: controller,
@@ -62,10 +74,10 @@ class MyHomePage extends HookWidget {
                         ),
                         physics: const BouncingScrollPhysics(),
                         itemCount: state.hasReachedMax
-                            ? state.productList.length
-                            : state.productList.length + 2,
+                            ? state.searchedList.length
+                            : state.searchedList.length + 2,
                         itemBuilder: (context, index) {
-                          if (index >= state.productList.length) {
+                          if (index >= state.searchedList.length) {
                             return Container(
                               alignment: Alignment.center,
                               child: const BottomLoader(),
@@ -74,41 +86,41 @@ class MyHomePage extends HookWidget {
                             return RowItem(
                               width: rowItemWidth,
                               homeItemModel: HomeItemModel(
-                                title: state.productList[index].productName ??
+                                title: state.searchedList[index].productName ??
                                     'Undefined',
-                                kroy: state.productList[index].charge
+                                kroy: state.searchedList[index].charge
                                         ?.currentCharge ??
                                     0,
-                                bikroy: state.productList[index].charge
+                                bikroy: state.searchedList[index].charge
                                         ?.sellingPrice ??
                                     0,
-                                lav: state.productList[index].charge?.profit ??
+                                lav: state.searchedList[index].charge?.profit ??
                                     0,
-                                discount: state.productList[index].charge
+                                discount: state.searchedList[index].charge
                                         ?.discountCharge ??
                                     0,
                                 image: state
-                                    .productList[index].images!.first.image!,
-                                stock: state.productList[index].stock! > 0
+                                    .searchedList[index].images!.first.image!,
+                                stock: state.searchedList[index].stock! > 0
                                     ? true
                                     : false,
                               ),
                               productResult: Result(
                                 productName:
-                                    state.productList[index].productName,
-                                brand: state.productList[index].brand,
-                                seller: state.productList[index].seller,
-                                images: state.productList[index].images!,
+                                    state.searchedList[index].productName,
+                                brand: state.searchedList[index].brand,
+                                seller: state.searchedList[index].seller,
+                                images: state.searchedList[index].images!,
                                 charge: Charge(
-                                  currentCharge: state
-                                      .productList[index].charge!.currentCharge,
+                                  currentCharge: state.searchedList[index]
+                                      .charge!.currentCharge,
                                   sellingPrice: state
-                                      .productList[index].charge!.sellingPrice,
+                                      .searchedList[index].charge!.sellingPrice,
                                   profit:
-                                      state.productList[index].charge!.profit,
+                                      state.searchedList[index].charge!.profit,
                                 ),
                                 description:
-                                    state.productList[index].description,
+                                    state.searchedList[index].description,
                               ),
                             );
                           }
@@ -134,3 +146,8 @@ class MyHomePage extends HookWidget {
     );
   }
 }
+
+
+/*
+ return 
+                */

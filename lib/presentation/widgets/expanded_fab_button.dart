@@ -86,39 +86,43 @@ class RowPrice extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Row(
-          children: [
-            Text(
-              isTopRow ? 'ক্রয়' : 'বিক্রয়',
-              style: hKroyBikroyLavTextStyle,
-            ),
-            const SizedBox(width: 5),
-            TakaWidget(
-              takaTextStyle: isTopRow ? hkroyPriceStyle : hBikroyPriceStyle,
-              isBigFont: true,
-              amount: isTopRow ? kroyTaka : bikroyTaka,
-            ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              isTopRow ? '' : 'লাভ',
-              style: hKroyBikroyLavTextStyle,
-            ),
-            const SizedBox(width: 3),
-            TakaWidget(
-              takaTextStyle: isTopRow ? hKroyPreviousStyle : hBikroyPriceStyle,
-              isBigFont: false,
-              amount: isTopRow ? kroyPreviousTaka : lavTaka,
-            ),
-          ],
-        ),
-      ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Text(
+                isTopRow ? 'ক্রয়' : 'বিক্রয়',
+                style: hKroyBikroyLavTextStyle,
+              ),
+              const SizedBox(width: 10),
+              TakaWidget(
+                takaTextStyle: isTopRow ? hkroyPriceStyle : hBikroyPriceStyle,
+                isBigFont: true,
+                amount: isTopRow ? kroyTaka : bikroyTaka,
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                isTopRow ? '' : 'লাভ',
+                style: hKroyBikroyLavTextStyle,
+              ),
+              const SizedBox(width: 10),
+              TakaWidget(
+                takaTextStyle:
+                    isTopRow ? hKroyPreviousStyle : hBikroyPriceStyle,
+                isBigFont: false,
+                amount: isTopRow ? kroyPreviousTaka : lavTaka,
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

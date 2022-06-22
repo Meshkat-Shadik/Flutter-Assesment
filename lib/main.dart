@@ -6,5 +6,5 @@ import 'package:ecommerce_demo/injection.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   configureInjection(Environment.prod);
-  runApp(const AppWidget());
+  runApp(AppWidget());
 }

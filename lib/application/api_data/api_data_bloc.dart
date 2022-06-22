@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
 
 import 'package:dartz/dartz.dart';
-import 'package:ecommerce_demo/domain/failures.dart';
+import 'package:ecommerce_demo/domain/failures/failures.dart';
 import 'package:ecommerce_demo/domain/i_api_repository.dart';
 import 'package:ecommerce_demo/infrastructure/model/api_data_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -65,4 +65,74 @@ class ApiDataBloc extends Bloc<ApiDataEvent, ApiDataState> {
       transformer: throttleDroppable(throttleDuration),
     );
   }
+
+//   Future<void> grabData(ApiDataEvent event, emit) async {
+//     bool isSearchEvent = event.when(
+//       watchAllstarted: () => false,
+//       searchChanged: (input) => false,
+//       searchPressed: () => true,
+//     );
+
+//     if (state.hasReachedMax) return;
+//     print('isSearchEvent = ' + isSearchEvent.toString());
+//     print('Apistate = ' + state.status.toString());
+//     print('SearchLoaded = ' + state.searchLoaded.toString());
+//     try {
+//       Either<ApiDataFailure, List<Result>>? iniProducts;
+//       Either<ApiDataFailure, List<Result>>? loadedProducts;
+//       if (state.status == ApiStatus.initial) {
+//         iniProducts = await _iApiRepository.getAllProducts();
+//         if (iniProducts.asRight().isEmpty) {
+//           return emit(state.copyWith(
+//             status: ApiStatus.failure,
+//             productList: [],
+//             hasReachedMax: false,
+//           ));
+//         } else {
+//           return emit(state.copyWith(
+//             status: ApiStatus.success,
+//             productList: iniProducts.asRight(),
+//             hasReachedMax: false,
+//           ));
+//         }
+//       }
+
+//       if (isSearchEvent == false && state.status == ApiStatus.success) {
+//         loadedProducts =
+//             await _iApiRepository.getAllProducts(state.productList.length);
+//         emit(loadedProducts.asRight().isEmpty
+//             ? state.copyWith(hasReachedMax: true)
+//             : state.copyWith(
+//                 status: ApiStatus.success,
+//                 productList: List.of(state.productList)
+//                   ..addAll(loadedProducts.asRight()),
+//                 hasReachedMax: false,
+//               ));
+//       } else if (isSearchEvent == true && state.status == ApiStatus.success) {
+//         if (state.searchInput.isValid()) {
+//           loadedProducts =
+//               await _iApiRepository.getSearchedProduct(state.searchInput);
+//           emit(loadedProducts.asRight().isEmpty
+//               ? state.copyWith(hasReachedMax: true)
+//               : state.copyWith(
+//                   status: ApiStatus.success,
+//                   productList: List.of(state.productList)
+//                     ..addAll(loadedProducts.asRight()),
+//                   hasReachedMax: false,
+//                 ));
+//         } else {
+//           emit(state.copyWith(
+//             showError: AutovalidateMode.always,
+//             failureOrSuccessOption: optionOf(loadedProducts),
+//           ));
+//         }
+
+//         // loadedProducts =
+//         //     await _iApiRepository.getAllProducts(state.productList.length);
+//       }
+//     } catch (_) {
+//       emit(state.copyWith(status: ApiStatus.failure));
+//     }
+//   }
+// }
 }

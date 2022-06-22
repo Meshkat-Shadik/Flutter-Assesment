@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 const bgPrimaryColor = Color.fromARGB(255, 247, 242, 255);
+const bgPrimaryAppBarColor = Color.fromARGB(255, 224, 219, 232);
 const bgWhite = Color(0xffffffff);
 const fabMinusColor = Color(0xffFFBFDD);
 const fabExpandedColor = Color(0xffFFCCE4);
@@ -11,8 +12,6 @@ const badgeErrorColor = Color(0xffC62828);
 const badgeErrorShadeColor = Color(0xffffcccc);
 const minusFabButtonColor = Color(0xffFFBFDD);
 const hintTextColor = Color(0xff989898);
-const String dashedLine =
-    '- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ';
 
 const floatingBtnGradient = LinearGradient(
   colors: [
@@ -24,7 +23,6 @@ const floatingBtnGradient = LinearGradient(
   stops: [0.0, 1.0],
   tileMode: TileMode.clamp,
 );
-
 
 //home text size
 const double hTitleFontSize = 14;
