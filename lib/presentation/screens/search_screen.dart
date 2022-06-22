@@ -52,11 +52,13 @@ class SearchScreen extends HookWidget {
             ),
           ),
           title: Text(
-            'Searched Result for ' +
-                BlocProvider.of<SearchBloc>(context)
-                    .state
-                    .searchInput
-                    .getOrCrash(),
+            BlocProvider.of<SearchBloc>(context).state.searchInput.isValid()
+                ? 'Searched Result for ' +
+                    BlocProvider.of<SearchBloc>(context)
+                        .state
+                        .searchInput
+                        .getOrCrash()
+                : '',
             style: dBrandDistributorValueStyle,
           ),
         ),
