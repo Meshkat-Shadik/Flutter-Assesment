@@ -20,18 +20,21 @@ mixin _$SearchEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String input) searchChanged,
     required TResult Function() searchButtonPressed,
+    required TResult Function() clearState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String input)? searchChanged,
     TResult Function()? searchButtonPressed,
+    TResult Function()? clearState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String input)? searchChanged,
     TResult Function()? searchButtonPressed,
+    TResult Function()? clearState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$SearchEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_SearchChanged value) searchChanged,
     required TResult Function(_SearchButtonPressed value) searchButtonPressed,
+    required TResult Function(_ClearState value) clearState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SearchChanged value)? searchChanged,
     TResult Function(_SearchButtonPressed value)? searchButtonPressed,
+    TResult Function(_ClearState value)? clearState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SearchChanged value)? searchChanged,
     TResult Function(_SearchButtonPressed value)? searchButtonPressed,
+    TResult Function(_ClearState value)? clearState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -139,6 +145,7 @@ class _$_SearchChanged implements _SearchChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String input) searchChanged,
     required TResult Function() searchButtonPressed,
+    required TResult Function() clearState,
   }) {
     return searchChanged(input);
   }
@@ -148,6 +155,7 @@ class _$_SearchChanged implements _SearchChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String input)? searchChanged,
     TResult Function()? searchButtonPressed,
+    TResult Function()? clearState,
   }) {
     return searchChanged?.call(input);
   }
@@ -157,6 +165,7 @@ class _$_SearchChanged implements _SearchChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String input)? searchChanged,
     TResult Function()? searchButtonPressed,
+    TResult Function()? clearState,
     required TResult orElse(),
   }) {
     if (searchChanged != null) {
@@ -170,6 +179,7 @@ class _$_SearchChanged implements _SearchChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(_SearchChanged value) searchChanged,
     required TResult Function(_SearchButtonPressed value) searchButtonPressed,
+    required TResult Function(_ClearState value) clearState,
   }) {
     return searchChanged(this);
   }
@@ -179,6 +189,7 @@ class _$_SearchChanged implements _SearchChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SearchChanged value)? searchChanged,
     TResult Function(_SearchButtonPressed value)? searchButtonPressed,
+    TResult Function(_ClearState value)? clearState,
   }) {
     return searchChanged?.call(this);
   }
@@ -188,6 +199,7 @@ class _$_SearchChanged implements _SearchChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SearchChanged value)? searchChanged,
     TResult Function(_SearchButtonPressed value)? searchButtonPressed,
+    TResult Function(_ClearState value)? clearState,
     required TResult orElse(),
   }) {
     if (searchChanged != null) {
@@ -249,6 +261,7 @@ class _$_SearchButtonPressed implements _SearchButtonPressed {
   TResult when<TResult extends Object?>({
     required TResult Function(String input) searchChanged,
     required TResult Function() searchButtonPressed,
+    required TResult Function() clearState,
   }) {
     return searchButtonPressed();
   }
@@ -258,6 +271,7 @@ class _$_SearchButtonPressed implements _SearchButtonPressed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String input)? searchChanged,
     TResult Function()? searchButtonPressed,
+    TResult Function()? clearState,
   }) {
     return searchButtonPressed?.call();
   }
@@ -267,6 +281,7 @@ class _$_SearchButtonPressed implements _SearchButtonPressed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String input)? searchChanged,
     TResult Function()? searchButtonPressed,
+    TResult Function()? clearState,
     required TResult orElse(),
   }) {
     if (searchButtonPressed != null) {
@@ -280,6 +295,7 @@ class _$_SearchButtonPressed implements _SearchButtonPressed {
   TResult map<TResult extends Object?>({
     required TResult Function(_SearchChanged value) searchChanged,
     required TResult Function(_SearchButtonPressed value) searchButtonPressed,
+    required TResult Function(_ClearState value) clearState,
   }) {
     return searchButtonPressed(this);
   }
@@ -289,6 +305,7 @@ class _$_SearchButtonPressed implements _SearchButtonPressed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SearchChanged value)? searchChanged,
     TResult Function(_SearchButtonPressed value)? searchButtonPressed,
+    TResult Function(_ClearState value)? clearState,
   }) {
     return searchButtonPressed?.call(this);
   }
@@ -298,6 +315,7 @@ class _$_SearchButtonPressed implements _SearchButtonPressed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SearchChanged value)? searchChanged,
     TResult Function(_SearchButtonPressed value)? searchButtonPressed,
+    TResult Function(_ClearState value)? clearState,
     required TResult orElse(),
   }) {
     if (searchButtonPressed != null) {
@@ -309,6 +327,116 @@ class _$_SearchButtonPressed implements _SearchButtonPressed {
 
 abstract class _SearchButtonPressed implements SearchEvent {
   const factory _SearchButtonPressed() = _$_SearchButtonPressed;
+}
+
+/// @nodoc
+abstract class _$$_ClearStateCopyWith<$Res> {
+  factory _$$_ClearStateCopyWith(
+          _$_ClearState value, $Res Function(_$_ClearState) then) =
+      __$$_ClearStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_ClearStateCopyWithImpl<$Res> extends _$SearchEventCopyWithImpl<$Res>
+    implements _$$_ClearStateCopyWith<$Res> {
+  __$$_ClearStateCopyWithImpl(
+      _$_ClearState _value, $Res Function(_$_ClearState) _then)
+      : super(_value, (v) => _then(v as _$_ClearState));
+
+  @override
+  _$_ClearState get _value => super._value as _$_ClearState;
+}
+
+/// @nodoc
+
+class _$_ClearState implements _ClearState {
+  const _$_ClearState();
+
+  @override
+  String toString() {
+    return 'SearchEvent.clearState()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_ClearState);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String input) searchChanged,
+    required TResult Function() searchButtonPressed,
+    required TResult Function() clearState,
+  }) {
+    return clearState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String input)? searchChanged,
+    TResult Function()? searchButtonPressed,
+    TResult Function()? clearState,
+  }) {
+    return clearState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String input)? searchChanged,
+    TResult Function()? searchButtonPressed,
+    TResult Function()? clearState,
+    required TResult orElse(),
+  }) {
+    if (clearState != null) {
+      return clearState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SearchChanged value) searchChanged,
+    required TResult Function(_SearchButtonPressed value) searchButtonPressed,
+    required TResult Function(_ClearState value) clearState,
+  }) {
+    return clearState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SearchChanged value)? searchChanged,
+    TResult Function(_SearchButtonPressed value)? searchButtonPressed,
+    TResult Function(_ClearState value)? clearState,
+  }) {
+    return clearState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SearchChanged value)? searchChanged,
+    TResult Function(_SearchButtonPressed value)? searchButtonPressed,
+    TResult Function(_ClearState value)? clearState,
+    required TResult orElse(),
+  }) {
+    if (clearState != null) {
+      return clearState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ClearState implements SearchEvent {
+  const factory _ClearState() = _$_ClearState;
 }
 
 /// @nodoc

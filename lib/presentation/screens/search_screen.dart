@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:ecommerce_demo/application/search/search_bloc.dart';
 import 'package:ecommerce_demo/constants.dart';
 import 'package:ecommerce_demo/infrastructure/model/api_data_model.dart';
@@ -39,6 +40,17 @@ class SearchScreen extends HookWidget {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: bgPrimaryAppBarColor,
+          leading: IconButton(
+            onPressed: () {
+              BlocProvider.of<SearchBloc>(context)
+                  .add(const SearchEvent.clearState());
+              context.router.pop();
+            },
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+            ),
+          ),
           title: Text(
             'Searched Result for ' +
                 BlocProvider.of<SearchBloc>(context)
@@ -68,7 +80,7 @@ class SearchScreen extends HookWidget {
                         controller: controller,
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
-                          childAspectRatio: 2 / 3.3,
+                          childAspectRatio: 2 / 3.87,
                           crossAxisCount: 2,
                           crossAxisSpacing: 5,
                         ),

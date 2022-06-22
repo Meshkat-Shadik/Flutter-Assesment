@@ -83,6 +83,10 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
         }
       },
     );
+
+    on<_ClearState>(
+      (event, emit) => emit(SearchState.initial()),
+    );
   }
 }
 
