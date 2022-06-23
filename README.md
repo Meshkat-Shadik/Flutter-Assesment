@@ -59,8 +59,3 @@ The UI is here.
     <td><img src="https://user-images.githubusercontent.com/31488481/175040206-2c69ce57-4910-4e04-aa67-7b5fbf80e2bd.png" height=500, width=300></td>   <td><img src="https://user-images.githubusercontent.com/31488481/175088897-eea24a1c-8071-48ad-9c03-19463c98051d.png" height=500, width=300></td>
     
  </table>
-
-
-## Future Work
-
-- Using reusable widget in search and home page! [updated 22 June, 2022]
