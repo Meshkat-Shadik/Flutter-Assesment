@@ -21,6 +21,7 @@ mixin _$ApiDataFailure {
     required TResult Function() unexpected,
     required TResult Function() internetConnectionFailure,
     required TResult Function() requestDenied,
+    required TResult Function() noProductsFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$ApiDataFailure {
     TResult Function()? unexpected,
     TResult Function()? internetConnectionFailure,
     TResult Function()? requestDenied,
+    TResult Function()? noProductsFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$ApiDataFailure {
     TResult Function()? unexpected,
     TResult Function()? internetConnectionFailure,
     TResult Function()? requestDenied,
+    TResult Function()? noProductsFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -44,6 +47,7 @@ mixin _$ApiDataFailure {
     required TResult Function(_InternetConnectionFailure value)
         internetConnectionFailure,
     required TResult Function(_RequestDenied value) requestDenied,
+    required TResult Function(_NoProductsFound value) noProductsFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,6 +56,7 @@ mixin _$ApiDataFailure {
     TResult Function(_InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult Function(_RequestDenied value)? requestDenied,
+    TResult Function(_NoProductsFound value)? noProductsFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +65,7 @@ mixin _$ApiDataFailure {
     TResult Function(_InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult Function(_RequestDenied value)? requestDenied,
+    TResult Function(_NoProductsFound value)? noProductsFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -126,6 +132,7 @@ class _$_Unexpected implements _Unexpected {
     required TResult Function() unexpected,
     required TResult Function() internetConnectionFailure,
     required TResult Function() requestDenied,
+    required TResult Function() noProductsFound,
   }) {
     return unexpected();
   }
@@ -136,6 +143,7 @@ class _$_Unexpected implements _Unexpected {
     TResult Function()? unexpected,
     TResult Function()? internetConnectionFailure,
     TResult Function()? requestDenied,
+    TResult Function()? noProductsFound,
   }) {
     return unexpected?.call();
   }
@@ -146,6 +154,7 @@ class _$_Unexpected implements _Unexpected {
     TResult Function()? unexpected,
     TResult Function()? internetConnectionFailure,
     TResult Function()? requestDenied,
+    TResult Function()? noProductsFound,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -161,6 +170,7 @@ class _$_Unexpected implements _Unexpected {
     required TResult Function(_InternetConnectionFailure value)
         internetConnectionFailure,
     required TResult Function(_RequestDenied value) requestDenied,
+    required TResult Function(_NoProductsFound value) noProductsFound,
   }) {
     return unexpected(this);
   }
@@ -172,6 +182,7 @@ class _$_Unexpected implements _Unexpected {
     TResult Function(_InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult Function(_RequestDenied value)? requestDenied,
+    TResult Function(_NoProductsFound value)? noProductsFound,
   }) {
     return unexpected?.call(this);
   }
@@ -183,6 +194,7 @@ class _$_Unexpected implements _Unexpected {
     TResult Function(_InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult Function(_RequestDenied value)? requestDenied,
+    TResult Function(_NoProductsFound value)? noProductsFound,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -244,6 +256,7 @@ class _$_InternetConnectionFailure implements _InternetConnectionFailure {
     required TResult Function() unexpected,
     required TResult Function() internetConnectionFailure,
     required TResult Function() requestDenied,
+    required TResult Function() noProductsFound,
   }) {
     return internetConnectionFailure();
   }
@@ -254,6 +267,7 @@ class _$_InternetConnectionFailure implements _InternetConnectionFailure {
     TResult Function()? unexpected,
     TResult Function()? internetConnectionFailure,
     TResult Function()? requestDenied,
+    TResult Function()? noProductsFound,
   }) {
     return internetConnectionFailure?.call();
   }
@@ -264,6 +278,7 @@ class _$_InternetConnectionFailure implements _InternetConnectionFailure {
     TResult Function()? unexpected,
     TResult Function()? internetConnectionFailure,
     TResult Function()? requestDenied,
+    TResult Function()? noProductsFound,
     required TResult orElse(),
   }) {
     if (internetConnectionFailure != null) {
@@ -279,6 +294,7 @@ class _$_InternetConnectionFailure implements _InternetConnectionFailure {
     required TResult Function(_InternetConnectionFailure value)
         internetConnectionFailure,
     required TResult Function(_RequestDenied value) requestDenied,
+    required TResult Function(_NoProductsFound value) noProductsFound,
   }) {
     return internetConnectionFailure(this);
   }
@@ -290,6 +306,7 @@ class _$_InternetConnectionFailure implements _InternetConnectionFailure {
     TResult Function(_InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult Function(_RequestDenied value)? requestDenied,
+    TResult Function(_NoProductsFound value)? noProductsFound,
   }) {
     return internetConnectionFailure?.call(this);
   }
@@ -301,6 +318,7 @@ class _$_InternetConnectionFailure implements _InternetConnectionFailure {
     TResult Function(_InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult Function(_RequestDenied value)? requestDenied,
+    TResult Function(_NoProductsFound value)? noProductsFound,
     required TResult orElse(),
   }) {
     if (internetConnectionFailure != null) {
@@ -358,6 +376,7 @@ class _$_RequestDenied implements _RequestDenied {
     required TResult Function() unexpected,
     required TResult Function() internetConnectionFailure,
     required TResult Function() requestDenied,
+    required TResult Function() noProductsFound,
   }) {
     return requestDenied();
   }
@@ -368,6 +387,7 @@ class _$_RequestDenied implements _RequestDenied {
     TResult Function()? unexpected,
     TResult Function()? internetConnectionFailure,
     TResult Function()? requestDenied,
+    TResult Function()? noProductsFound,
   }) {
     return requestDenied?.call();
   }
@@ -378,6 +398,7 @@ class _$_RequestDenied implements _RequestDenied {
     TResult Function()? unexpected,
     TResult Function()? internetConnectionFailure,
     TResult Function()? requestDenied,
+    TResult Function()? noProductsFound,
     required TResult orElse(),
   }) {
     if (requestDenied != null) {
@@ -393,6 +414,7 @@ class _$_RequestDenied implements _RequestDenied {
     required TResult Function(_InternetConnectionFailure value)
         internetConnectionFailure,
     required TResult Function(_RequestDenied value) requestDenied,
+    required TResult Function(_NoProductsFound value) noProductsFound,
   }) {
     return requestDenied(this);
   }
@@ -404,6 +426,7 @@ class _$_RequestDenied implements _RequestDenied {
     TResult Function(_InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult Function(_RequestDenied value)? requestDenied,
+    TResult Function(_NoProductsFound value)? noProductsFound,
   }) {
     return requestDenied?.call(this);
   }
@@ -415,6 +438,7 @@ class _$_RequestDenied implements _RequestDenied {
     TResult Function(_InternetConnectionFailure value)?
         internetConnectionFailure,
     TResult Function(_RequestDenied value)? requestDenied,
+    TResult Function(_NoProductsFound value)? noProductsFound,
     required TResult orElse(),
   }) {
     if (requestDenied != null) {
@@ -426,4 +450,124 @@ class _$_RequestDenied implements _RequestDenied {
 
 abstract class _RequestDenied implements ApiDataFailure {
   const factory _RequestDenied() = _$_RequestDenied;
+}
+
+/// @nodoc
+abstract class _$$_NoProductsFoundCopyWith<$Res> {
+  factory _$$_NoProductsFoundCopyWith(
+          _$_NoProductsFound value, $Res Function(_$_NoProductsFound) then) =
+      __$$_NoProductsFoundCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_NoProductsFoundCopyWithImpl<$Res>
+    extends _$ApiDataFailureCopyWithImpl<$Res>
+    implements _$$_NoProductsFoundCopyWith<$Res> {
+  __$$_NoProductsFoundCopyWithImpl(
+      _$_NoProductsFound _value, $Res Function(_$_NoProductsFound) _then)
+      : super(_value, (v) => _then(v as _$_NoProductsFound));
+
+  @override
+  _$_NoProductsFound get _value => super._value as _$_NoProductsFound;
+}
+
+/// @nodoc
+
+class _$_NoProductsFound implements _NoProductsFound {
+  const _$_NoProductsFound();
+
+  @override
+  String toString() {
+    return 'ApiDataFailure.noProductsFound()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_NoProductsFound);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() internetConnectionFailure,
+    required TResult Function() requestDenied,
+    required TResult Function() noProductsFound,
+  }) {
+    return noProductsFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? internetConnectionFailure,
+    TResult Function()? requestDenied,
+    TResult Function()? noProductsFound,
+  }) {
+    return noProductsFound?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? internetConnectionFailure,
+    TResult Function()? requestDenied,
+    TResult Function()? noProductsFound,
+    required TResult orElse(),
+  }) {
+    if (noProductsFound != null) {
+      return noProductsFound();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_InternetConnectionFailure value)
+        internetConnectionFailure,
+    required TResult Function(_RequestDenied value) requestDenied,
+    required TResult Function(_NoProductsFound value) noProductsFound,
+  }) {
+    return noProductsFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_InternetConnectionFailure value)?
+        internetConnectionFailure,
+    TResult Function(_RequestDenied value)? requestDenied,
+    TResult Function(_NoProductsFound value)? noProductsFound,
+  }) {
+    return noProductsFound?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_InternetConnectionFailure value)?
+        internetConnectionFailure,
+    TResult Function(_RequestDenied value)? requestDenied,
+    TResult Function(_NoProductsFound value)? noProductsFound,
+    required TResult orElse(),
+  }) {
+    if (noProductsFound != null) {
+      return noProductsFound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NoProductsFound implements ApiDataFailure {
+  const factory _NoProductsFound() = _$_NoProductsFound;
 }

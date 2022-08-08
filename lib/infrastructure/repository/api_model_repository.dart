@@ -22,7 +22,7 @@ class ApiModelRepository implements IApiRepository {
       if (products != null) {
         return right(products);
       } else {
-        return left(const ApiDataFailure.requestDenied());
+        return left(const ApiDataFailure.noProductsFound());
       }
     } catch (e) {
       return left(const ApiDataFailure.unexpected());
@@ -35,7 +35,6 @@ class ApiModelRepository implements IApiRepository {
       [int offset = 0,
       int limit = 10]) async {
     final searchString = name.getOrCrash();
-
     try {
       final response = await http.get(
         Uri.parse(
@@ -47,7 +46,7 @@ class ApiModelRepository implements IApiRepository {
       if (products != null) {
         return right(products);
       } else {
-        return left(const ApiDataFailure.requestDenied());
+        return left(const ApiDataFailure.noProductsFound());
       }
     } catch (e) {
       return left(const ApiDataFailure.unexpected());
